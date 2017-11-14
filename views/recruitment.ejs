@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+    <%-include("include/header", {title: title})%>
+    <div class="global-wrapper static-wrapper">
+      <!-- S 公共头部 -->
+      <% if (isMobile) { %>
+        <%-include("include/navMobile")%>
+      <% } else{%>
+        <%-include("include/navPc")%>
+      <%}%>
+      <!-- E 公共头部 -->
+      <div class="main-content">
+        <div class="recruit-page">
+          <div class="recruit-content">
+            <h5 class="post-title">深圳大客户销售经理</h5>
+            <div class="post-detail clear">
+              <div class="post-disq fr">
+                <h6 class="post-tips">任职资格</h6>
+                <ol class="post-list">
+                  <li>1、独立完成客户的拜访及产品销售；</li>
+                  <li>2、负责企业端大客户的开拓，建立稳定的客户关系，维护现有客户资源；</li>
+                  <li>3、撰写企业端大客户调研报告及客户解决方案；</li>
+                  <li>4、分析企业端大客户的消费心理，制定行之有效的销售策略；</li>
+                  <li>5、进行商务谈判，参与销售合同具体条款的制定及合同签订</li>
+                </ol>
+              </div>
+              <div class="post-duty fl">
+                <h6 class="post-tips">岗位职责</h6>
+                <ol class="post-list">
+                  <li>1、本科以上学历，年龄35岁以下</li>
+                  <li>2、具有3-5年互联网/软件行业（企业端）大客户销售经验，有金融行业或者客户服务系统的大客户销售经验者优先考虑；</li>
+                  <li>3、注重效率，能适应高强度、快节奏的工作环境，有激情，有强烈的团队协作意识；</li>
+                  <li>4、具备较强的市场开拓、客户沟通能力，较强的沟通技巧和团队管理能力；</li>
+                  <li>5、具有深厚的行业资源背景和一定的客户资源，具备敏锐的观察力、分析判断能力；</li>
+                  <li>6、有基金、保险、证券、交通、旅游、快消品等行业资源者优先；</li>
+                  <li>7、能够承受较大的工作压力和销售业绩要求。</li>
+                </ol>
+              </div>
+            </div>
+            <div class="post-apply">
+              <h6 class="apply-title">我要应聘</h6>
+              <form action="">
+                <div class="apply-content clear">
+                  <div class="apply-intro fr clear">
+                    <label for="">联系人</label>
+                    <textarea name="" id=""></textarea>
+                  </div>
+                  <div class="apply-list fl">
+                    <ul>
+                      <li class="clear">
+                        <label for="">联系人</label>
+                        <input type="text">
+                      </li>
+                      <li class="clear">
+                        <label for="">联系人</label>
+                        <input type="text">
+                      </li>
+                      <li class="clear">
+                        <label for="">联系人</label>
+                        <input type="text">
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <a href="javascript:;" class="apply-submit">提交</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- S 公共尾部 -->
+      <%-include("include/footer")%>
+      <!-- E 公共尾部 -->
+    </div>
+  </body>
+</html>

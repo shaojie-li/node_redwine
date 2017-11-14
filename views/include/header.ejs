@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]> <html class="ie ie8 lte_ie8 lte_ie9" lang="zh-CN"> <![endif]-->
+<% if (pageName === "home") { %>
+	<html>
+<% } else{%>
+	<html class="sticky-footer">
+<%}%>
+    <head>
+        <title><%= title %></title>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="format-detection" content="date=no">
+        <meta name="format-detection" content="address=no">
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+        <link rel='stylesheet' href='/stylesheets/main.min.css' />
+        <link rel='stylesheet' href='/stylesheets/swiper-3.4.2.min.css' />
+        <script data-main="/javascripts/<%= pageName %>.js" defer async="true" src="/javascripts/libs/require.js"></script>
+    </head>
+    <body>

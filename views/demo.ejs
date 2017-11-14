@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <%-include("include/header", {title: title})%>
+    <div class="global-wrapper static-wrapper">
+      <!-- S 公共头部 -->
+      <% if (isMobile) { %>
+        <%-include("include/navMobile")%>
+      <% } else{%>
+        <%-include("include/navPc")%>
+      <%}%>
+      <!-- E 公共头部 -->
+      <div class="main-content">
+        <div class="prodList-page">
+          <div class="filter-class">123</div>
+        </div>
+      </div>
+      <!-- S 公共尾部 -->
+      <%-include("include/footer")%>
+      <!-- E 公共尾部 -->
+    </div>
+  </body>
+</html>

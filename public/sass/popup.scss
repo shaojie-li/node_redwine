@@ -1,0 +1,322 @@
+.prod-popup{
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: default;
+  .pop-prod-box{
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 120;
+  }
+  .swiper-container{
+      height: 100%;
+  }
+  .wrap-box{
+      position: relative;
+      width: 40%;
+      min-width: 640px;
+      height: 100%;
+      margin: 0 auto;
+      em{
+          position: absolute;
+          cursor: pointer;
+          background: url(../images/home/home_spirit.png) no-repeat;
+          &.close{
+              right: -100px;
+              top: 35px;
+              width: 40px;
+              height: 40px;
+              background-position: 0 -149px;
+          }
+          &.left{
+              left: -100px;
+              top: 50%;
+              margin-top: -27px;
+              width: 29px;
+              height: 54px;
+              background-position: 0 -85px;
+          }
+          &.right{
+              right: -100px;
+              top: 50%;
+              margin-top: -27px;
+              width: 29px;
+              height: 54px;
+              background-position: -37px -85px;
+          }
+      }
+  }
+  .pop-wrap{
+      height: 100%;
+      li{
+          width: 100%;
+          height: 100%;
+          float: left;
+      }
+  }
+  .pop-img{
+      display: table;
+      width: 100%;
+      height: 100%;
+      .v-cell{
+          display: table-cell;
+          vertical-align: middle;
+          height: 100%;
+      }
+      img{
+          width: 100%;
+      }
+  }
+  .mask{
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 110;
+      background-color: #000;
+      background: url(../images/home/popup_bg.jpg) repeat;
+  }
+}
+
+.active-popup{
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  z-index: 120;
+  .pop-ctn{
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      display: table;
+  }
+  .ctn-box{
+      display: table-cell;
+      vertical-align: middle;
+  }
+  .cell-content{
+      width: 57%;
+      max-width: 1084px;
+      min-width: 800px;
+      margin: 0 auto;
+      background-color: #fafafa;
+      box-shadow: 5px 5px 15px rgba(0,0,0,.2);
+      overflow: hidden;
+      .cell-left{
+          width: 75%;
+          background-color: #fff;
+          overflow: hidden;
+          .content{
+              border-right: 1px solid #eaeaea;
+              padding: 6% 6% 7%;
+          }
+          .swiper-slide{
+              float: left;
+          }
+          .left,.right{
+              position: absolute;
+              top: 50%;
+              margin-top: -41px;
+              width: 82px;
+              height: 82px;
+              background: url(../images/home/home_spirit.png) no-repeat;
+              cursor: pointer;
+              z-index: 10;
+          }
+          .left{
+              background-position: 0 -207px;
+              left: 20px;
+          }
+          .right{
+              background-position: 0 -301px;
+              right: 20px;
+          }
+          .img-box{
+              img{
+                  width: 100%;
+              }
+          }
+          .pagation-active{
+              margin-top: 2%;
+              ul{
+                  margin-left: -1.66666%;
+                  margin-top: -1.66666%;
+              }
+              .pagation-item{
+                  float: left;
+                  margin-left: 1.66666%;
+                  margin-top: 1%;
+                  width: 15%;
+                  cursor: pointer;
+                  &.on{
+                      img{
+                          border: 3px solid #262628;
+                      }
+                  }
+                  img{
+                      width: 100%;
+                      border: 3px solid #fff;
+                  }
+              }
+          }
+      }
+      .cell-right{
+          width: 25%;
+          background-color: #fafafa;
+          .content{
+              
+          }
+          .ctn-top{
+              padding: 17% 6% 15%;
+              border-bottom: 1px solid #ddd;
+          }
+          .cell-title{
+              font-size: 18px;
+              color: #333;
+              margin-bottom: 8%;
+              @include textdeal(1);
+          }
+          .pup-time{
+              display: block;
+              font-size: 14px;
+              color: #999;
+              @include textdeal(1);
+          }
+          .ctn-bottom{
+              padding: 12% 6% 15%;
+              font-size: 14px;
+              line-height: 20px;
+              text-align: justify;
+              .text{
+                  max-height: 300px;
+                  text-indent: 14px;
+                  overflow: hidden;
+              }
+          }
+      }
+  }
+  .mask{
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: url(../images/home/popup_bg.jpg) repeat;
+  }
+  .close{
+      position: fixed;
+      right: 50px;
+      top: 30px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      background: url(../images/home/home_spirit.png) 0 -149px no-repeat;
+      z-index: 10;
+  }
+}
+
+.notice-popup{
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 120;
+  .pop-ctn{
+      display: table;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      .ctn-box{
+          display: table-cell;
+          vertical-align: middle;
+          .cell-content{
+              width: 57%;
+              
+              height: 90%;
+              overflow-x: hidden;
+              overflow-y: auto;
+              margin: 0 auto;
+              background-color: #fff;
+          }
+      }
+      .content{
+          padding: 10% 5% 5%;
+          li{
+              line-height: 25px;
+              .nav-icon{
+                  width: 25px;
+                  height: 25px;
+                  background: url(../images/home/home_spirit.png) -57px -17px no-repeat;
+              }
+              .ctn-wrap{
+                  display: none;
+                  overflow: hidden;
+              }
+              &.on{
+                  .nav-icon{
+                      margin-top: 11px;
+                      height: 2px;
+                      background-position: -57px -48px;
+                  }
+              }
+          }
+          .nav{
+              font-size: 18px;
+              color: #333;
+              padding: 10px 15px;
+              border-bottom: 1px solid #ccc;
+              cursor: pointer;
+              .nav-title{
+                  float: left;
+              }
+              .nav-icon{
+                  float: right;
+              }
+          }
+          .ctn{
+              font-size: 14px;
+              line-height: 20px;
+              padding: 20px 15px;
+              img{
+                  width: 100%;
+              }
+          }
+          .ctn-img{
+              li{
+                  margin-top: 15px;
+              }
+          }
+          .ctn-text{
+              text-align: justify;
+          }
+      }
+  }
+  .mask{
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: url(../images/home/popup_bg.jpg) repeat;
+  }
+  .close{
+      position: fixed;
+      right: 20px;
+      top: 20px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      background: url(../images/home/home_spirit.png) 0 -149px no-repeat;
+      z-index: 10;
+  }
+}
