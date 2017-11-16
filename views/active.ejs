@@ -2,11 +2,7 @@
     <%-include("include/header", {title: title})%>
     <div class="global-wrapper static-wrapper">
       <!-- S 公共头部 -->
-      <% if (isMobile) { %>
-        <%-include("include/navMobile")%>
-      <% } else{%>
-        <%-include("include/navPc")%>
-      <%}%>
+      <%-include("include/navPc")%>
       <!-- E 公共头部 -->
       <div class="main-content">
         <div class="active-page">
