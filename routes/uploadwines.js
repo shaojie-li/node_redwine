@@ -17,12 +17,12 @@ router.post('/', function(req, res, next) {
 
 	var loadData = Object.assign({}, req.body);
 
-	loadData.smallImage.url = 'http://localhost:3001/uploadfile/' + loadData.smallImage.name;
+	loadData.smallImage.url = '/uploadfile/' + loadData.smallImage.name;
 
-	loadData.largerImage.url = 'http://localhost:3001/uploadfile/' + loadData.largerImage.name;
+	loadData.largerImage.url = '/uploadfile/' + loadData.largerImage.name;
 
-	loadData.listImage.url = 'http://localhost:3001/uploadfile/' + loadData.listImage.name;
-	console.log(loadData)
+	loadData.listImage.url = '/uploadfile/' + loadData.listImage.name;
+
 	Home.findById('59f72895ca8e128c96492698', function(err, docs){
 		if(err) return handleError(err);
 		docs.products.push(loadData);

@@ -16,8 +16,6 @@ router.post('/', function(req, res, next) {
 
 	var loadData = Object.assign({}, req.body);
 
-	console.log(loadData);
-
 	res.send('success');
 
 });

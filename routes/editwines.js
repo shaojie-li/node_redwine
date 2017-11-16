@@ -3,7 +3,6 @@ let router = express.Router();
 let http = require('http');
 let mongoose = require('mongoose');
 let Home = require('../models/home');
-let fileUrl = 'http://localhost:3001/postfile/'
 
 router.all('*', function(req, res, next) {  
   res.header("Access-Control-Allow-Origin", "*");  
@@ -20,19 +19,19 @@ router.post('/', function(req, res, next) {
 	let reqId = loadData._id, reqCountry = loadData.country;
 
 	if(loadData.smallImage.name != undefined){
-		loadData.smallImage.url = 'http://localhost:3001/uploadfile/' + loadData.smallImage.name;
+		loadData.smallImage.url = '/uploadfile/' + loadData.smallImage.name;
 	} else{
 		loadData.smallImage = {};
 	}
 	
 	if(loadData.largerImage.name != undefined){
-		loadData.largerImage.url = 'http://localhost:3001/uploadfile/' + loadData.largerImage.name;
+		loadData.largerImage.url = '/uploadfile/' + loadData.largerImage.name;
 	} else{
 		loadData.largerImage = {};
 	}
 
 	if(loadData.listImage.name != undefined){
-		loadData.listImage.url = 'http://localhost:3001/uploadfile/' + loadData.listImage.name;
+		loadData.listImage.url = '/uploadfile/' + loadData.listImage.name;
 	} else{
 		loadData.listImage = {};
 	}

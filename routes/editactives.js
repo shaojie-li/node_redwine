@@ -3,7 +3,6 @@ let router = express.Router();
 let http = require('http');
 let mongoose = require('mongoose');
 let Home = require('../models/home');
-let fileUrl = 'http://localhost:3001/postfile/'
 
 router.all('*', function(req, res, next) {  
   res.header("Access-Control-Allow-Origin", "*");  
@@ -20,15 +19,15 @@ router.post('/', function(req, res, next) {
 	let reqId = loadData._id;
 
 	if(loadData.listImg.name != undefined){
-		loadData.listImg.url = 'http://localhost:3001/uploadfile/' + loadData.listImg.name;
+		loadData.listImg.url = '/uploadfile/' + loadData.listImg.name;
 	} else{
 		loadData.listImg = {};
 	}
-	console.log(loadData)
+
 	loadData.detailImg = loadData.detailImg.map(function(v, i){
 		if(v.name != undefined){
 			var midObj = {};
-			midObj.url = 'http://localhost:3001/uploadfile/' + v.name;
+			midObj.url = '/uploadfile/' + v.name;
 			midObj.name = v.name;
 			return midObj;
 		} else{

@@ -18,16 +18,14 @@ router.post('/', function(req, res, next) {
 	var loadData = Object.assign({}, req.body);
 
 
-	loadData.listImg.url = 'http://localhost:3001/uploadfile/' + loadData.listImg.name;
+	loadData.listImg.url = '/uploadfile/' + loadData.listImg.name;
 	
 	loadData.detailImg = loadData.detailImg.map(function(v, i){
 		var midObj = {};
-		midObj.url = 'http://localhost:3001/uploadfile/' + v.name;
+		midObj.url = '/uploadfile/' + v.name;
 		midObj.name = v.name;
 		return midObj;
 	});
-
-	console.log(loadData)
 	
 	Home.findById('59f72895ca8e128c96492698', function(err, docs){
 		if(err) return handleError(err);

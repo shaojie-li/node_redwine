@@ -24,7 +24,7 @@ router.post('/', function(req, res, next) {
 	for(var i = 0;i < loadData.length;i++){
 		reqData[i] = {};
 		reqData[i].name = loadData[i].name;
-		reqData[i].url = 'http://localhost:3001/uploadfile/' + loadData[i].name;
+		reqData[i].url = '/uploadfile/' + loadData[i].name;
 	}
 	console.log(reqData)
 	Home.findById('59f72895ca8e128c96492698', function(err, docs){

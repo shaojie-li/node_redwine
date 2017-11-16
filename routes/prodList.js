@@ -39,13 +39,10 @@ router.get('/', function(req, res, next) {
 		};
 		data.products = data.products.filter(function(v, i){
 			if(data.params.country === '' && data.params.type !== ''){
-				console.log(1)
 				return v.types === reqType;
 			} else if(data.params.type === '' && data.params.country !== ''){
-				console.log(2)
 				return v.country === reqCountry;
 			} else if(data.params.type !== '' && data.params.country !== ''){
-				console.log(3)
 				return v.country === reqCountry && v.types === reqType;
 			}  else{
 				return v;
