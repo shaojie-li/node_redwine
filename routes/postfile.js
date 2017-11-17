@@ -1,8 +1,8 @@
-var express = require('express');
-var router = express.Router();
-var multer = require('multer');
+let express = require('express');
+let router = express.Router();
+let multer = require('multer');
 
-var storage = multer.diskStorage({
+let storage = multer.diskStorage({
  	//设置上传后文件路径，uploads文件夹会自动创建。
   destination: function (req, file, cb) {
     cb(null, './public/uploadfile')
@@ -13,7 +13,7 @@ var storage = multer.diskStorage({
   }
  });  
 
-var upload = multer({ storage: storage });
+let upload = multer({ storage: storage });
 
 router.all('*', function(req, res, next) {  
   res.header("Access-Control-Allow-Origin", "*");  

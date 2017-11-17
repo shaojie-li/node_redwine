@@ -1,8 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var http = require('http');
-var mongoose = require('mongoose');
-var Home = require('../models/home');
+let express = require('express');
+let router = express.Router();
+let http = require('http');
+let mongoose = require('mongoose');
+let Home = require('../models/home');
+let config = new require('../config');
 
 router.all('*', function(req, res, next) {  
   res.header("Access-Control-Allow-Origin", "*");  
@@ -15,14 +16,14 @@ router.all('*', function(req, res, next) {
 /* 添加活动 */
 router.post('/', function(req, res, next) {
 
-	var loadData = Object.assign({}, req.body);
+	let loadData = Object.assign({}, req.body);
+	let baseUrl = req.headers.host || '';
 
-
-	loadData.listImg.url = '/uploadfile/' + loadData.listImg.name;
+	loadData.listImg.url = config.protocol + baseUrl + '/uploadfile/' + loadData.listImg.name;
 	
 	loadData.detailImg = loadData.detailImg.map(function(v, i){
-		var midObj = {};
-		midObj.url = '/uploadfile/' + v.name;
+		let midObj = {};
+		midObj.url = config.protocol + baseUrl + '/uploadfile/' + v.name;
 		midObj.name = v.name;
 		return midObj;
 	});

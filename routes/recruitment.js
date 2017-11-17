@@ -1,14 +1,14 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 
 /* GET prodList page. */
 router.get('/', function(req, res, next) {
-	var ua = req.headers['user-agent'].toLowerCase();  
-	var isMobile = ua.match(/(iphone|ipod|ipad|android)/) ? true : false;
+	let ua = req.headers['user-agent'].toLowerCase();  
+	let isMobile = ua.match(/(iphone|ipod|ipad|android)/) ? true : false;
 
-	var navList = ['首页', '葡萄酒', '精彩活动'];
+	let navList = ['首页', '葡萄酒', '精彩活动'];
 
-	var baseData = { title: '招聘详情页', pageName: 'recruitment', 'isMobile': isMobile, 'navList': navList};
+	let baseData = { title: '招聘详情页', pageName: 'recruitment', 'isMobile': isMobile, 'navList': navList};
   
   res.render('recruitment', baseData);
   

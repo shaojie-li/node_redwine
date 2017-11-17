@@ -1,3 +1,4 @@
 module.exports = {
-	NODE_ENV: process.env.NODE_ENV
+	NODE_ENV: process.env.NODE_ENV,
+	protocol: 'http://'
 }

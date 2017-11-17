@@ -1,18 +1,18 @@
-var express = require('express');
-var router = express.Router();
-var MongoDB = require('../mongodb');
-var Home = new require('../models/home');
+let express = require('express');
+let router = express.Router();
+let MongoDB = require('../mongodb');
+let Home = new require('../models/home');
 
 /* GET prodList page. */
 router.get('/', function(req, res, next) {
-	var ua = req.headers['user-agent'].toLowerCase();  
-	var isMobile = ua.match(/(iphone|ipod|ipad|android)/) ? true : false;
+	let ua = req.headers['user-agent'].toLowerCase();  
+	let isMobile = ua.match(/(iphone|ipod|ipad|android)/) ? true : false;
 
-	var navList = [];
+	let navList = [];
 
-	var baseData = { title: '葡萄酒列表页', pageName: 'prodList', 'isMobile': isMobile, 'navList': navList};
+	let baseData = { title: '葡萄酒列表页', pageName: 'prodList', 'isMobile': isMobile, 'navList': navList};
 
-	var reqCountry = req.query.country,
+	let reqCountry = req.query.country,
 		reqType = req.query.type,
 		reqPage = req.query.page;
 
@@ -20,8 +20,8 @@ router.get('/', function(req, res, next) {
 	.select({'products': 1, '_id': 0})
 	.exec(function(err, prodList){
 		if(err) return handleError(err);
-		var dbData = prodList._doc;
-		var data = Object.assign({}, baseData, dbData);
+		let dbData = prodList._doc;
+		let data = Object.assign({}, baseData, dbData);
 		data.country = [];
 		data.type = [];
 		

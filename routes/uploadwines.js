@@ -3,6 +3,7 @@ var router = express.Router();
 var http = require('http');
 var mongoose = require('mongoose');
 var Home = require('../models/home');
+let config = new require('../config');
 
 router.all('*', function(req, res, next) {  
   res.header("Access-Control-Allow-Origin", "*");  
@@ -16,12 +17,13 @@ router.all('*', function(req, res, next) {
 router.post('/', function(req, res, next) {
 
 	var loadData = Object.assign({}, req.body);
+	let baseUrl = req.headers.host || '';
 
-	loadData.smallImage.url = '/uploadfile/' + loadData.smallImage.name;
+	loadData.smallImage.url = config.protocol + baseUrl + '/uploadfile/' + loadData.smallImage.name;
 
-	loadData.largerImage.url = '/uploadfile/' + loadData.largerImage.name;
+	loadData.largerImage.url = config.protocol + baseUrl + '/uploadfile/' + loadData.largerImage.name;
 
-	loadData.listImage.url = '/uploadfile/' + loadData.listImage.name;
+	loadData.listImage.url = config.protocol + baseUrl + '/uploadfile/' + loadData.listImage.name;
 
 	Home.findById('59f72895ca8e128c96492698', function(err, docs){
 		if(err) return handleError(err);

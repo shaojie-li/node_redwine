@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var Home = new require('../models/home');
+let express = require('express');
+let router = express.Router();
+let Home = new require('../models/home');
 
 router.all('*', function(req, res, next) {  
   res.header("Access-Control-Allow-Origin", "*");  

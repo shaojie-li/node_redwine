@@ -3,6 +3,7 @@ let router = express.Router();
 let http = require('http');
 let mongoose = require('mongoose');
 let Home = require('../models/home');
+let config = new require('../config');
 
 router.all('*', function(req, res, next) {  
   res.header("Access-Control-Allow-Origin", "*");  
@@ -17,9 +18,10 @@ router.post('/', function(req, res, next) {
 
 	let loadData = Object.assign({}, req.body);
 	let reqId = loadData._id;
+	let baseUrl = req.headers.host || '';
 
 	if(loadData.listImg.name != undefined){
-		loadData.listImg.url = '/uploadfile/' + loadData.listImg.name;
+		loadData.listImg.url = config.protocol + baseUrl + '/uploadfile/' + loadData.listImg.name;
 	} else{
 		loadData.listImg = {};
 	}
@@ -27,7 +29,7 @@ router.post('/', function(req, res, next) {
 	loadData.detailImg = loadData.detailImg.map(function(v, i){
 		if(v.name != undefined){
 			var midObj = {};
-			midObj.url = '/uploadfile/' + v.name;
+			midObj.url = baseUrl + '/uploadfile/' + v.name;
 			midObj.name = v.name;
 			return midObj;
 		} else{

@@ -17,21 +17,22 @@ router.post('/', function(req, res, next) {
 
 	let loadData = Object.assign({}, req.body);
 	let reqId = loadData._id, reqCountry = loadData.country;
+	let baseUrl = req.headers.host || '';
 
 	if(loadData.smallImage.name != undefined){
-		loadData.smallImage.url = '/uploadfile/' + loadData.smallImage.name;
+		loadData.smallImage.url = baseUrl + '/uploadfile/' + loadData.smallImage.name;
 	} else{
 		loadData.smallImage = {};
 	}
 	
 	if(loadData.largerImage.name != undefined){
-		loadData.largerImage.url = '/uploadfile/' + loadData.largerImage.name;
+		loadData.largerImage.url = baseUrl + '/uploadfile/' + loadData.largerImage.name;
 	} else{
 		loadData.largerImage = {};
 	}
 
 	if(loadData.listImage.name != undefined){
-		loadData.listImage.url = '/uploadfile/' + loadData.listImage.name;
+		loadData.listImage.url = baseUrl + '/uploadfile/' + loadData.listImage.name;
 	} else{
 		loadData.listImage = {};
 	}

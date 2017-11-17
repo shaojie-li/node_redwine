@@ -3,7 +3,11 @@
       <!-- S 公共头部 -->
       <div class="g-header clear">
         <div class="g-nav fr">
-          <%-include("include/navPC")%>
+          <% if (isMobile) { %>
+            <%-include("include/navMobile")%>
+          <% } else{%>
+            <%-include("include/navPc")%>
+          <%}%>
         </div>
         <div class="g-logo fl">
           <h1>
