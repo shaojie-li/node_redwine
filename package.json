@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "cross-env NODE_ENV=development hotnode ./bin/www",
-    "build": "export NODE_ENV=production pm2 start ./bin/www",
-    "stop": "pm2 stop ./bin/www"
+    "dev": "cross-env NODE_ENV=development hotnode ./bin/www",
+    "start": "cross-env NODE_ENV=production pm2 start ./bin/www --name 'redwines'",
+    "stop": "cross-env NODE_ENV=production pm2 stop ./bin/www --name 'redwines'"
   },
   "dependencies": {
     "body-parser": "~1.17.1",

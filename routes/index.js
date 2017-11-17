@@ -3,7 +3,11 @@ var router = express.Router();
 var MongoDB = require('../mongodb');
 var Home = new require('../models/home');
 var config = new require('../config');
-console.log(config.NODE_ENV)
+if(config.NODE_ENV === 'production'){
+	console.log('production')
+} else{
+	console.log('development')
+}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
