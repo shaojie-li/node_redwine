@@ -15,7 +15,6 @@ router.get('/', function(req, res, next) {
 	Home.findById('59f72895ca8e128c96492698')
 	.select({'actives': 1})
 	.exec(function(err, activeList){
-		console.log(activeList)
 		if(err) return handleError(err);
 		var dbData = activeList._doc;
 		var data = Object.assign({}, baseData, dbData);
