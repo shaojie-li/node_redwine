@@ -1,0 +1,101 @@
+	<%-include("include/header", {title: title})%>
+    <div class="global-wrapper static-wrapper">
+      <!-- S 公共头部 -->
+      <%-include("include/navPC")%>
+      <!-- E 公共头部 -->
+      <div class="main-content">
+        <div class="prodList-page">
+        	<div class="filter-class">
+        		<div class="content">
+        			<div class="country" id="country">
+        				<dl class="clear">
+        					<dt>国家：</dt>
+                  <dl class="inner-dl fl clear">
+                    <% if(params.country === ''){ %>
+                      <dd class="on"><a href="/prodlist?type=<%= params.type %>">不限</a></dd>
+                    <% } else{ %>
+                      <dd><a href="/prodlist?type=<%= params.type %>">不限</a></dd>
+                    <% } %>
+                    <% country.map(function(v, i){ %>
+                      <% if(params.country === v){ %>
+                        <dd class="on"><a href="/prodlist?country=<%= v %>&type=<%= params.type %>"><%= v %></a></dd>
+                      <% } else{ %>
+                        <dd><a href="/prodlist?country=<%= v %>&type=<%= params.type %>"><%= v %></a></dd>
+                      <% } %>
+                    <% }) %>
+                  </dl>
+        				</dl>
+        			</div>
+        			<div class="type" id="type">
+        				<dl class="clear">
+        					<dt>类型：</dt>
+                  <dl class="inner-dl fl clear">
+          					<% if(params.type === ''){ %>
+                      <dd class="on"><a href="/prodlist?country=<%= params.country %>">不限</a></dd>
+                    <% } else{ %>
+                      <dd><a href="/prodlist?country=<%= params.country %>">不限</a></dd>
+                    <% } %>
+                    <% type.map(function(v, i){ %>
+                      <% if(params.type === v){ %>
+                        <dd class="on"><a href="/prodlist?country=<%= params.country %>&type=<%= v %>"><%= v %></a></dd>
+                      <% } else{ %>
+                        <dd><a href="/prodlist?country=<%= params.country %>&type=<%= v %>"><%= v %></a></dd>
+                      <% } %>
+                    <% }) %>
+                  </dl>
+        				</dl>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="prod-list" id="Js-prodlist-popup">
+        		<div class="content">
+        			<ul class="list-wrap clear">
+                <% if(products.length){ %>
+                  <% products.map(function(v, i){ %>
+                    <li class="list-item">
+                      <div class="wrap">
+                        <div class="img-box">
+                          <img src="<%= v.listImage.url %>" alt="">
+                        </div>
+                        <div class="title-box">
+                          <p class="title-first"><%= v.name %></p>
+                          <p class="title-second"><%= v.enName %></p>
+                        </div>
+                      </div>
+                      <div class="prod-popup">
+                        <div class="pop-prod-box">
+                          <div class="wrap-box">
+                            <div class="swiper-container pop-item-1">
+                              <ul class="pop-wrap swiper-wrapper clear">
+                                <li class="swiper-slide">
+                                  <div class="pop-img">
+                                    <div class="v-cell">
+                                      <img src="<%= v.largerImage.url %>" alt="">
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                            <em class="close"></em>
+                            <em class="left"></em>
+                            <em class="right"></em>
+                          </div>
+                        </div>
+                        <i class="mask"></i>
+                      </div>
+                    </li>
+                  <% }) %>
+                <% } else{ %>
+                  <p class="product-status">暂无产品</p>
+                <% } %>
+        			</ul>
+        		</div>
+        	</div>
+        </div>
+      </div>
+      <!-- S 公共尾部 -->
+      <%-include("include/footer")%>
+      <!-- E 公共尾部 -->
+    </div>
+  </body>
+</html>
