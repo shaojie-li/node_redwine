@@ -10,14 +10,14 @@ var logger = require('pomelo-logger').getLogger('mongodb-log');
 mongoose.Promise = global.Promise;
 
 var options = {
-    db_user: "",
-    db_pwd: "",
+    db_user: "lisouljay",
+    db_pwd: "lishaojie123",
     db_host: "127.0.0.1",
     db_port: 27017,
     db_name: "redwines"
 };
 
-var dbURL = "mongodb://" + options.db_host + ":" + options.db_port + "/" + options.db_name;
+var dbURL = "mongodb://" + options.db_user + ':' + options.db_pwd + '@' + options.db_host + ":" + options.db_port + "/" + options.db_name;
 
 var db = mongoose.connect(dbURL, { useMongoClient: true });
 

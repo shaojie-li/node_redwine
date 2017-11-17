@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var MongoDB = require('../mongodb');
 var Home = new require('../models/home');
-
+console.log(process.env.NODE_ENV)
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	
@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
 	var isMobile = ua.match(/(iphone|ipod|ipad|android)/) ? true : false;
 		
 	var navList = ['首页', '关于我们', '葡萄酒', '精彩活动', '公告', '招募精英', '联系我们'];
+
 	/* 美国、法国、意大利、其他 */
 	Home.find({}, function(err, home){
 		var baseData = { 
@@ -18,7 +19,6 @@ router.get('/', function(req, res, next) {
 			'isMobile': isMobile, 
 			'navList': navList
 		}, dbData = home[0]._doc;
-
 		Object.keys(dbData.productsClassic).map(function(v, i) {
 
 			if(!dbData.productsClassic[v].length){
