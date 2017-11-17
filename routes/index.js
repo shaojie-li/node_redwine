@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var MongoDB = require('../mongodb');
 var Home = new require('../models/home');
-console.log(process.env.NODE_ENV)
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	
