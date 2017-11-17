@@ -48,7 +48,7 @@ router.get('/', function(req, res, next) {
 				return v;
 			}
 		});
-		res.render('prodList', data);
+		res.render('prodlist', data);
 	});
 
   
