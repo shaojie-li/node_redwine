@@ -151,9 +151,13 @@ var homeSchema = new Schema({
 			title: String,
 			id: Number
 		}
+	],
+	user: [
+		{
+			account: String,
+			pass: String
+		}
 	]
-	
-
 }, {
     versionKey: false,
     timestamps: { createdAt: 'createTime', updatedAt: 'updateTime' }

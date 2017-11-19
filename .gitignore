@@ -1,7 +1,12 @@
 node_modules
 sass
 .sass-cache
-psd
+public/psd
+public/psd/*
+public/sass
+public/sass/*
+public/产品小图
+public/产品小图/*
 *.7z 
 *.dmg 
 *.gz 

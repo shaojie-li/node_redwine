@@ -13,7 +13,7 @@ router.all('*', function(req, res, next) {
   next();  
 });
 	
-/* 添加产品 */
+/* 添加banner图 */
 router.post('/', function(req, res, next) {
 
 	let loadData = Object.assign([], req.body),tips = 'success',reqData = [];
@@ -26,9 +26,9 @@ router.post('/', function(req, res, next) {
 	for(let i = 0;i < loadData.length;i++){
 		reqData[i] = {};
 		reqData[i].name = loadData[i].name;
-		reqData[i].url = config.protocol + baseUrl + '/uploadfile/' + loadData[i].name;
+		reqData[i].url = config.protocol + baseUrl + '/uploadfile/bannerImage/' + loadData[i].name;
 	}
-	console.log(reqData)
+	
 	Home.findById('59f72895ca8e128c96492698', function(err, docs){
 		if(err) return handleError(err);
 		let bannerArr = [], reqArr = [];

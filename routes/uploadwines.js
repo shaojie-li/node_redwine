@@ -19,11 +19,11 @@ router.post('/', function(req, res, next) {
 	var loadData = Object.assign({}, req.body);
 	let baseUrl = req.headers.host || '';
 
-	loadData.smallImage.url = config.protocol + baseUrl + '/uploadfile/' + loadData.smallImage.name;
+	loadData.smallImage.url = config.protocol + baseUrl + '/uploadfile/simage/' + loadData.smallImage.name;
 
-	loadData.largerImage.url = config.protocol + baseUrl + '/uploadfile/' + loadData.largerImage.name;
+	loadData.largerImage.url = config.protocol + baseUrl + '/uploadfile/bimage/' + loadData.largerImage.name;
 
-	loadData.listImage.url = config.protocol + baseUrl + '/uploadfile/' + loadData.listImage.name;
+	loadData.listImage.url = config.protocol + baseUrl + '/uploadfile/limage/' + loadData.listImage.name;
 
 	Home.findById('59f72895ca8e128c96492698', function(err, docs){
 		if(err) return handleError(err);

@@ -19,11 +19,11 @@ router.post('/', function(req, res, next) {
 	let loadData = Object.assign({}, req.body);
 	let baseUrl = req.headers.host || '';
 
-	loadData.listImg.url = config.protocol + baseUrl + '/uploadfile/' + loadData.listImg.name;
+	loadData.listImg.url = config.protocol + baseUrl + '/uploadfile/avtiveSimage/' + loadData.listImg.name;
 	
 	loadData.detailImg = loadData.detailImg.map(function(v, i){
 		let midObj = {};
-		midObj.url = config.protocol + baseUrl + '/uploadfile/' + v.name;
+		midObj.url = config.protocol + baseUrl + '/uploadfile/avtiveBimage/' + v.name;
 		midObj.name = v.name;
 		return midObj;
 	});

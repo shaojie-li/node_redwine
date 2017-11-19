@@ -1,7 +1,8 @@
 let express = require('express');
 let router = express.Router();
 let http = require('http');
-let fileUrl = 'http://localhost:3001/postfile/'
+let mongoose = require('mongoose');
+let Home = require('../models/home');
 
 router.all('*', function(req, res, next) {  
   res.header("Access-Control-Allow-Origin", "*");  
@@ -11,12 +12,19 @@ router.all('*', function(req, res, next) {
   next();  
 });
 	
-/* 添加产品 */
+/* 登陆 */
 router.post('/', function(req, res, next) {
 
 	let loadData = Object.assign({}, req.body);
-
-	res.send('success');
+	let reqName = loadData.account, reqPass = loadData.pass;
+	
+	Home.findById('59f72895ca8e128c96492698', function(err, docs){
+		if(err) return handleError(err);
+		let userObj = docs.user.filter(function(v, i){
+			return v.account === reqName && v.pass === reqPass;
+		});
+		userObj.length ? res.json({code: 1, result: reqName}) : res.send({code: 0});
+	});
 
 });
 

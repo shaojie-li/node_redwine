@@ -21,6 +21,7 @@ var uploadactives = require('./routes/uploadactives');
 var getactives = require('./routes/getactives');
 var deleteactives = require('./routes/deleteactives');editactives
 var editactives = require('./routes/editactives');
+var login = require('./routes/login');
 
 var app = express();
 
@@ -52,6 +53,7 @@ app.use('/uploadactives', uploadactives);
 app.use('/getactives', getactives);
 app.use('/deleteactives', deleteactives);
 app.use('/editactives', editactives);
+app.use('/login', login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
