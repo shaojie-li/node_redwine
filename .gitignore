@@ -1,5 +1,5 @@
 ﻿node_modules
-sass
+node_modules/*
 public/.sass-cache
 public/psd
 public/psd/*
