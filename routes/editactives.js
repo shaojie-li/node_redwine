@@ -21,7 +21,7 @@ router.post('/', function(req, res, next) {
 	let baseUrl = req.headers.host || '';
 
 	if(loadData.listImg.name != undefined){
-		loadData.listImg.url = config.protocol + baseUrl + '/uploadfile/' + loadData.listImg.name;
+		loadData.listImg.url = config.protocol + baseUrl + '/uploadfile/avtiveSimage/' + loadData.listImg.name;
 	} else{
 		loadData.listImg = {};
 	}
@@ -29,7 +29,7 @@ router.post('/', function(req, res, next) {
 	loadData.detailImg = loadData.detailImg.map(function(v, i){
 		if(v.name != undefined){
 			var midObj = {};
-			midObj.url = baseUrl + '/uploadfile/' + v.name;
+			midObj.url = config.protocol + baseUrl + '/uploadfile/avtiveBimage/' + v.name;
 			midObj.name = v.name;
 			return midObj;
 		} else{

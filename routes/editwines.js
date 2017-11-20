@@ -21,19 +21,19 @@ router.post('/', function(req, res, next) {
 	let baseUrl = req.headers.host || '';
 
 	if(loadData.smallImage.name != undefined){
-		loadData.smallImage.url = config.protocol + baseUrl + '/uploadfile/' + loadData.smallImage.name;
+		loadData.smallImage.url = config.protocol + baseUrl + '/uploadfile/simage/' + loadData.smallImage.name;
 	} else{
 		loadData.smallImage = {};
 	}
 	
 	if(loadData.largerImage.name != undefined){
-		loadData.largerImage.url = baseUrl + '/uploadfile/' + loadData.largerImage.name;
+		loadData.largerImage.url = config.protocol + baseUrl + '/uploadfile/bimage/' + loadData.largerImage.name;
 	} else{
 		loadData.largerImage = {};
 	}
 
 	if(loadData.listImage.name != undefined){
-		loadData.listImage.url = baseUrl + '/uploadfile/' + loadData.listImage.name;
+		loadData.listImage.url = config.protocol + baseUrl + '/uploadfile/limage/' + loadData.listImage.name;
 	} else{
 		loadData.listImage = {};
 	}
@@ -47,9 +47,11 @@ router.post('/', function(req, res, next) {
 			if(v._id == reqId){
 
 				let smallImg = Object.assign({}, docs.products[i].smallImage),
-						largerImg = Object.assign({}, docs.products[i].largerImage),
-						hasSmallImg = !!Object.keys(req.body.smallImage).length,
-						hasLargerImg = !!Object.keys(req.body.largerImage).length;
+					largerImg = Object.assign({}, docs.products[i].largerImage),
+					listImg = Object.assign({}, docs.products[i].listImage),
+					hasSmallImg = !!Object.keys(req.body.smallImage).length,
+					hasLargerImg = !!Object.keys(req.body.largerImage).length,
+					hasListImg = !!Object.keys(req.body.listImage).length;
 
 				docs.products[i] = loadData;
 
@@ -59,6 +61,10 @@ router.post('/', function(req, res, next) {
 
 				if(!hasLargerImg){
 					docs.products[i].largerImage = largerImg
+				}
+
+				if(!hasListImg){
+					docs.products[i].listImage = listImg
 				}
 
 				var filterProducts = docs.products.filter(function(v1, i1) {

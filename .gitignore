@@ -1,8 +1,9 @@
-node_modules
+﻿node_modules
 sass
-.sass-cache
+public/.sass-cache
 public/psd
 public/psd/*
+public/stylesheets/*.map
 public/sass
 public/sass/*
 public/产品小图
