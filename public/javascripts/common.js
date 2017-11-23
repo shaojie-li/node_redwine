@@ -29,9 +29,10 @@ define(['swiper'], function(swp) {
   	 * @param    {[String]}   parentClass [父级类名]
   	 */
   	swpFun: function(parentClass){
+      var itemLenGt1 = $(parentClass).find('.swiper-slide').length > 1;
 			var newSwp = new swp(parentClass, {
 				loop: true,
-				autoplay : false,
+				autoplay : itemLenGt1 ? 3000 : false,
 				calculateHeight : true,
 				speed:600,
         noSwiping: true,
@@ -56,13 +57,16 @@ define(['swiper'], function(swp) {
 			});
 			$(parentClass).siblings('.img-text').find('.left').on('click', function(e){
 			    e.preventDefault()
-			    newSwp.swipePrev()
-			    // console.log(newSwp.swipeTo)
+			    itemLenGt1 && newSwp.swipePrev()
 			});
 			$(parentClass).siblings('.img-text').find('.right').on('click', function(e){
 			    e.preventDefault()
-			    newSwp.swipeNext()
+			    itemLenGt1 && newSwp.swipeNext()
 			});
+      $(parentClass).siblings('.img-text').find('.pagation-box li').on('mouseenter', function(){
+        var index = $(this).index();
+        itemLenGt1 && newSwp.swipeTo(index);
+      })
   	},
 
   	/**
@@ -78,7 +82,7 @@ define(['swiper'], function(swp) {
   				$propItem = $parents.find('.prod-popup');
 
 			var htmlList = $propItem.find('.swiper-wrapper').html();
-
+      var itemLenGt1 = $propItem.find('.swiper-slide').length > 1;
   		$listItem.on('click', function(e){
   			var $this = $(this),
   					index = parseInt($this.attr('data-index')),
@@ -109,16 +113,20 @@ define(['swiper'], function(swp) {
               initialSlide: index,
 							autoplayDisableOnInteraction: false
 					});
+          if(!itemLenGt1){
+            $leftBtn.hide();
+            $rightBtn.hide();
+          }
 					$leftBtn.on('click', function(e){
 					    e.preventDefault();
 					    e.stopPropagation();
-					    newSwp.swipePrev();
+					    itemLenGt1 && newSwp.swipePrev();
 					});
 
 					$rightBtn.on('click', function(e){
 					    e.preventDefault();
 					    e.stopPropagation();
-					    newSwp.swipeNext();
+					    itemLenGt1 && newSwp.swipeNext();
 					});
 
 					$closeBtn.on('click', function(e){
