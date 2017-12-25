@@ -17,7 +17,6 @@ router.get('/', function(req, res, next) {
 		if(err) return handleError(err);
 		res.json(home.products);
 	});
-	
 
 });
 

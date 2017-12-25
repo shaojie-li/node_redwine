@@ -1,0 +1,86 @@
+.prodList-page .main-content {
+  padding-top: 0; }
+.prodList-page .filter-class {
+  background-color: #f7f7f7;
+  padding: 35px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; }
+  .prodList-page .filter-class .content {
+    width: 1000px;
+    margin: 0 auto; }
+    .prodList-page .filter-class .content dt, .prodList-page .filter-class .content dd {
+      float: left;
+      color: #333;
+      font-size: 14px;
+      padding: 3px 0; }
+    .prodList-page .filter-class .content dd {
+      margin: 0 15px;
+      padding: 3px 5px;
+      cursor: pointer; }
+      .prodList-page .filter-class .content dd.on {
+        background-color: #000;
+        cursor: default; }
+        .prodList-page .filter-class .content dd.on a {
+          color: #fff;
+          cursor: default; }
+  .prodList-page .filter-class .country {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd; }
+  .prodList-page .filter-class .type {
+    padding-top: 20px; }
+.prodList-page .inner-dl {
+  width: 90%; }
+.prodList-page .prod-list {
+  padding: 50px 0; }
+  .prodList-page .prod-list .content {
+    width: 1000px;
+    margin: 0 auto; }
+.prodList-page .list-wrap {
+  width: 1025px; }
+.prodList-page .list-item {
+  width: 241px;
+  float: left;
+  margin: 0 15px 60px 0;
+  cursor: pointer;
+  border: 1px solid #fff;
+  transition: all 300ms ease; }
+  .prodList-page .list-item:hover {
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15); }
+  .prodList-page .list-item .img-box img {
+    width: 100%;
+    height: 284px; }
+  .prodList-page .list-item .title-box {
+    padding: 12px 10px; }
+  .prodList-page .list-item .title-first, .prodList-page .list-item .title-second {
+    color: #333;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+.prodList-page .product-status {
+  text-align: center;
+  font-size: 30px; }
+
+@media screen and (max-width: 1000px) {
+  .prodList-page .filter-class .content {
+    width: 80%; }
+  .prodList-page .prod-list {
+    padding: 30px 0; }
+    .prodList-page .prod-list .content {
+      width: 80%;
+      margin: 0 auto; }
+      .prodList-page .prod-list .content ul {
+        width: auto;
+        margin-right: -5%; }
+      .prodList-page .prod-list .content li {
+        width: 45%;
+        margin: 0 5% 5% 0; }
+        .prodList-page .prod-list .content li img {
+          width: 100%;
+          min-width: 145px;
+          height: auto; } }
+
+/*# sourceMappingURL=prodList.css.map */

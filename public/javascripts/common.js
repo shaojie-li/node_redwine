@@ -92,6 +92,7 @@ define(['swiper'], function(swp) {
   					$rightBtn = $popBox.find('.right'),
   					$closeBtn = $popBox.find('.close'),
   					$listBox = $popBox.find('.swiper-wrapper'),
+            $mask = $propItem.find('.pop-prod-box'),
   					listHtml = $listBox.html();
   					
   			$popBox.on('click', function(e){
@@ -134,6 +135,14 @@ define(['swiper'], function(swp) {
 		  			$('html').removeClass('overhide');
 		  			$(this).parents('.prod-popup').css('display','none');
 		  		});
+
+          $mask.on('click', function(e){
+            var ev = window.event || e;
+            e.stopPropagation();
+            if(ev.target.className !== 'pop-prod-box') return;
+            $('html').removeClass('overhide');
+            $(this).parents('.prod-popup').css('display','none');
+          });
   			});
 
   		});
@@ -152,8 +161,8 @@ define(['swiper'], function(swp) {
 						find('.pagation-item'),
 					clientWidth = $(window).width(),
 					listBox = $parent.find('.swiper-wrapper'),
+          $mask = $parent.parents('.pop-ctn').siblings('.mask'),
 					listHtml = listBox.html();
-			
 			if(isIE && (isIE.vision === 8)){
 				$parent.parents('.cell-content').width(clientWidth*0.57);
 			}
@@ -192,10 +201,22 @@ define(['swiper'], function(swp) {
 						e.preventDefault();
 						newSwp.swipePrev();
 					});
+
 					$parent.find('.right').on('click', function(e){
 						e.preventDefault();
 						newSwp.swipeNext();
 					});
+
+          $parent.parents('.active-popup').on('click', function(e){
+            var ev = window.event || e;
+            ev.stopPropagation();
+            if(ev.target.className !== 'ctn-box') return;
+            $('html').removeClass('overhide');
+              $parent.siblings('.pagation-active').
+                find('.pagation-item').eq(0).addClass('on').siblings('.pagation-item').removeClass('on');
+              $parent.parents('.active-popup').hide();
+          });
+
 				});
 			});
   	},

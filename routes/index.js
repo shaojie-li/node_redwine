@@ -19,6 +19,12 @@ router.get('/', function(req, res, next) {
 			'isMobile': isMobile, 
 			'navList': navList
 		}, dbData = home[0]._doc;
+		dbData.products.sort(function(a, b){
+			return b.date - a.date
+		});
+		dbData.actives.sort(function(a, b){
+			return b.date - a.date
+		});
 		Object.keys(dbData.productsClassic).map(function(v, i) {
 
 			if(!dbData.productsClassic[v].length){

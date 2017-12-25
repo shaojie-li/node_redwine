@@ -17,6 +17,9 @@ router.get('/', function(req, res, next) {
 	.exec(function(err, activeList){
 		if(err) return handleError(err);
 		let dbData = activeList._doc;
+		dbData.actives.sort(function(a, b){
+			return b.date- a.date;
+		})
 		let data = Object.assign({}, baseData, dbData);
 
 		res.render('active', data);

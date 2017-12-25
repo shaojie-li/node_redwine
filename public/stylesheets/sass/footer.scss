@@ -1,0 +1,14 @@
+.common-footer{
+    padding: 30px 90px 25px 72px;
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    .g-logo{
+        .logo-bd{
+            @include bg-img-b(423px, 67px, '../images/logo_footer.png');
+        }
+    }
+    .company_cpy{
+        margin-top: 50px;
+    }
+}

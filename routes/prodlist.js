@@ -49,6 +49,9 @@ router.get('/', function(req, res, next) {
 				return v;
 			}
 		});
+		data.products.sort(function(a, b){
+			return b.date - a.date
+		});
 		res.render('prodlist', data);
 	});
 
