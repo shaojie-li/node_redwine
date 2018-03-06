@@ -555,11 +555,11 @@ input, select {
 .red-wine {
   padding-top: 40px; }
   .red-wine .prod-info {
-    width: 26%;
+    width: 100%;
     font-size: 14px;
     line-height: 18px;
     color: #333;
-    margin-top: 12%; }
+    margin-top: 8px; }
     .red-wine .prod-info .intros {
       display: none; }
       .red-wine .prod-info .intros i {
