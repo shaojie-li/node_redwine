@@ -1,0 +1,67 @@
+@import './mixin.scss';
+
+.g-header-wrap{
+    position: relative;
+    padding: 14px 12px;
+}
+.g-header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #fff;
+    .g-logo{
+        position: relative;
+        width: 200px;
+        height: 31px;
+        img {
+            width: 100%;
+        }
+    }
+    &.hasShadow{
+        box-shadow: 5px 5px 10px rgba(0,0,0,.3);
+    }
+    .g-nav{
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%; 
+        li{
+            color: #000;
+            background-color: rgba(0,0,0,.75);
+            border-bottom: 1px solid #666;
+            a{
+                display: block;
+                color: #fff;
+                font-weight: 500;
+                padding: 15px 25px;
+            }
+        }
+    }
+}
+
+.static-wrapper{
+  .g-header{
+    position: static;
+  }
+}
+
+.menu-ext{
+    .ext-icon{
+        position: absolute;
+        right: 20px;
+        top: 17px;
+        i{
+            display: block;
+            width: 30px;
+            height: 5px;
+            background-color: #000;
+            border-radius: 10px;
+            &:nth-child(2){
+                margin: 5px 0;
+            }
+        }
+    }
+}

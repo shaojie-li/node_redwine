@@ -1,20 +1,18 @@
 <!-- S 公共导航 -->
-<div class="g-header clear">
-  <div class="g-nav fr">
-    <ul>
-      <% for(var i = 0;i < navList.length;i++) { %>
-        <% if(navList[i] === '首页'){ %>
-          <li><a href="/"><%= navList[i] %></a></li>
-        <% } else{ %>
-          <li><a href="javascript:;"><%= navList[i] %></a></li>
-        <% } %>
-      <%}%>
-    </ul>
-  </div>
-  <div class="g-logo fl">
-    <h1>
-    	<a href="/" class="logo-bd"><img src="./images/logo.png" alt="深圳市前海佰迈投资有限公司"></a>
-    </h1>
-  </div>
+<div class="g-nav fr">
+  <ul>
+    <% for(var i = 0;i < navList.length;i++) { %>
+      <% if(navList[i] === '首页'){ %>
+        <li><a href="/"><%= navList[i] %></a></li>
+      <% } else{ %>
+        <li><a href="javascript:;"><%= navList[i] %></a></li>
+      <% } %>
+    <%}%>
+  </ul>
+</div>
+<div class="g-logo fl">
+  <h1>
+  	<a href="/" class="logo-bd"><img src="./images/logo.png" alt="深圳市前海佰迈投资有限公司"></a>
+  </h1>
 </div>
 <!-- E 公共导航 -->

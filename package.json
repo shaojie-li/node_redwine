@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "develop": "./node_modules/.bin/gulp develop --gulpfile gulpfile.js",
     "dev": "cross-env NODE_ENV=development hotnode ./bin/www",
     "start": "cross-env NODE_ENV=production pm2 start ./bin/www --name 'redwines'",
     "stop": "cross-env NODE_ENV=production pm2 stop ./bin/www --name 'redwines'"
@@ -22,6 +23,11 @@
     "ee-first": "^1.1.1",
     "finalhandler": "^1.1.0",
     "forwarded": "^0.1.2",
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
     "hotnode": "^0.0.8",
     "inherits": "^2.0.3",
     "ipaddr.js": "^1.5.2",

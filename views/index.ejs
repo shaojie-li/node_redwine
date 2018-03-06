@@ -2,13 +2,11 @@
     <div class="global-wrapper">
       <!-- S 公共头部 -->
       <div class="g-header clear">
-        <div class="g-nav fr">
-          <% if (isMobile) { %>
-            <%-include("include/navmobile")%>
-          <% } else{%>
-            <%-include("include/navpc")%>
-          <%}%>
-        </div>
+        <% if (isMobile) { %>
+          <%-include("include/navmobile")%>
+        <% } else{%>
+          <%-include("include/navpc")%>
+        <%}%>
       </div>
       <!-- E 公共头部 -->
       <div class="main-content">
@@ -33,19 +31,35 @@
           <div class="company-info scrollItem">
             <h3 class="common-title">公司简介</h3>
             <div class="info-wrapper common-wrap clear">
-              <p class="info-en fr">
-                  Bai Mai Wine (Shenzhen Buy My Wine investment Co.Ltd) industry promotes wine culture and communication as base, wine industry sales and wholesale operations, providing total solutions of wine business to enhance the core competitiveness of products. <br /><br />
-                  
-                  Bai Mai Wine covering Guangdong, Northwest, Southwest of China Bai Mai Wine has united with US Department of Agriculture, Washington, Washington State Wine Institute's import and export group in mainland China to promote wines from Washington State. The core wine products include Milbrandt, Gordon, Claar Cellars, Hedges winery products from Washington State. Bai Mai Wine also imports French organic wines, based on China's emerging wine market, to promote organic products. <br /><br />
-                  
-                  In the future, we need to look for wines from Italy, Burgundy in France, South Africa, Spain, Australia, new world countries. We adopted leading cultural promotion based, so that our dealers understand cultural areas better, foreshadowing market. 
-              </p>
-              <p class="info-cn fl">
-                  佰迈酒业葡萄酒文化合作 ‘，葡萄酒产业运营销售和批发，为企业提供葡萄酒整体解决经营方案，增强产品核心竞争。 <br /><br />
-                  
-                  佰迈酒业覆盖中国广东、西北、西南地区，佰迈酒业联合美国农业部华盛顿州葡萄酒协会旗下华盛顿进出口集团在中国大陆地区进口推广来自华盛顿州的葡萄酒。核心产品包括美国华盛顿州葡萄酒 Milbrandt、Gordon、Claar Cellars、Hedges 酒庄产品。佰迈酒业还独自进口法国有机葡萄酒，立足中国新兴葡萄酒消费市场，推广有机产品。 <br /><br />
-                  
+              <p class="info-cn">
+                  佰迈酒业葡萄酒文化合作，葡萄酒产业运营销售和批发，为企业提供葡萄酒整体解决经营方案，增强产品核心竞争。
+                  <% if (isMobile) { %>
+                    <br />
+                  <% } else{%>
+                    <br /><br />
+                  <%}%>
+                  佰迈酒业覆盖中国广东、西北、西南地区，佰迈酒业联合美国农业部华盛顿州葡萄酒协会旗下华盛顿进出口集团在中国大陆地区进口推广来自华盛顿州的葡萄酒。核心产品包括美国华盛顿州葡萄酒 Milbrandt、Gordon、Claar Cellars、Hedges 酒庄产品。佰迈酒业还独自进口法国有机葡萄酒，立足中国新兴葡萄酒消费市场，推广有机产品。
+                  <% if (isMobile) { %>
+                    <br />
+                  <% } else{%>
+                    <br /><br />
+                  <%}%>
                   未来我们需要寻找来自意大利、法国勃艮第、南非、西班牙，新世界国家澳洲葡萄酒产品。同时我们采用先行文化推广为主，让我们的经销商了解产区文化，铺垫好市场
+              </p>
+              <p class="info-en">
+                  Bai Mai Wine (Shenzhen Buy My Wine investment Co.Ltd) industry promotes wine culture and communication as base, wine industry sales and wholesale operations, providing total solutions of wine business to enhance the core competitiveness of products.
+                  <% if (isMobile) { %>
+                    <br />
+                  <% } else{%>
+                    <br /><br />
+                  <%}%>
+                  Bai Mai Wine covering Guangdong, Northwest, Southwest of China Bai Mai Wine has united with US Department of Agriculture, Washington, Washington State Wine Institute's import and export group in mainland China to promote wines from Washington State. The core wine products include Milbrandt, Gordon, Claar Cellars, Hedges winery products from Washington State. Bai Mai Wine also imports French organic wines, based on China's emerging wine market, to promote organic products.
+                  <% if (isMobile) { %>
+                    <br />
+                  <% } else{%>
+                    <br /><br />
+                  <%}%>
+                  In the future, we need to look for wines from Italy, Burgundy in France, South Africa, Spain, Australia, new world countries. We adopted leading cultural promotion based, so that our dealers understand cultural areas better, foreshadowing market. 
               </p>
             </div>
           </div>
@@ -54,173 +68,11 @@
           <div class="red-wine scrollItem">
             <h3 class="common-title">葡萄酒</h3>
             <div class="wine-wrapper common-wrap">
-              <% Object.keys(productsClassic).map(function(v, i){ %>
-                <% if(productsClassic[v].length){ %>
-                  <% if(i%2 === 0){%>
-                    <div class="prod-item clear" id="prod-item-<%= i + 1 %>">
-                      <div class="prod-img fr clear">
-                        <div class="img-wrap prod-item-<%= i + 1 %> fr swiper-container">
-                          <ul class="img-box swiper-wrapper clear">
-                            <% productsClassic[v].map(function(v1, i1) { %>
-                              <li class="swiper-slide swiper-no-swiping item-list" data-index="<%= i1 %>">
-                                <img src="<%= v1.smallImage.url %>" alt="<%= v1.area %>">
-                                <i class="mask"></i>
-                                <em class="icon_plus"></em>
-                              </li>
-                            <% }) %>
-                          </ul>
-                        </div>
-                        <div class="img-text fr">
-                          <%= v %>
-                          <div class="area">
-                            <% productsClassic[v].map(function(v1, i1) { %>
-                              <% if(i1 === 0){ %>
-                                <span style="display: block;"><%= v1.area %></span>
-                              <% } else{ %>
-                                <span><%= v1.area %></span>
-                              <% } %>
-                            <% }) %>
-                          </div>
-                          <div class="pagation-home">
-                            <ul class="pagation-box">
-                              <% productsClassic[v].map(function(v1, i1) { %>
-                                <% if(i1 === 0){ %>
-                                  <li class="on clear"><span>0<%= i1 + 1%></span><em></em><i></i></li>
-                                <% } else{ %>
-                                  <% if(i1 < 9){ %>
-                                      <li class="clear"><span>0<%= i1 + 1%></span><em></em><i></i></li>
-                                  <% } else{ %>
-                                      <li class="clear"><span><%= i1 + 1%></span><em></em><i></i></li>
-                                  <% } %>
-                                <% } %>
-                              <% }) %>
-                            </ul>
-                            <div class="tab-btn clear">
-                              <em class="left fl">&lt;</em>
-                              <em class="right fr">&gt;</em>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="home-prod-popup-wrap">
-                          <div class="prod-popup">
-                            <div class="pop-prod-box">
-                              <div class="wrap-box">
-                                <div class="swiper-container">
-                                  <ul class="pop-wrap swiper-wrapper clear">
-                                    <% productsClassic[v].map(function(v1, i1) { %>
-                                      <li class="swiper-slide">
-                                        <div class="pop-img">
-                                          <div class="v-cell">
-                                            <img src="<%= v1.largerImage.url %>" alt="<%= v1.area %>">
-                                          </div>
-                                        </div>
-                                      </li>
-                                    <% }) %>
-                                  </ul>
-                                </div>
-                                <em class="close"></em>
-                                <em class="left"></em>
-                                <em class="right"></em>
-                              </div>
-                            </div>
-                            <i class="mask"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="prod-info fl">
-                        <% productsClassic[v].map(function(v1, i1) { %>
-                          <% if(i1 === 0){ %>
-                            <p class="intros" style="display: block;"><%- v1.intros.replace(/\n/g, '<i></i>') %></p>
-                          <% } else{ %>
-                            <p class="intros"><%- v1.intros.replace(/\n/g, '<i></i>') %></p>
-                          <% } %>
-                        <% }) %>
-                      </div>
-                    </div>
-                  <% } else{ %>
-                    <div class="prod-item clear" id="prod-item-<%= i + 1 %>">
-                      <div class="prod-img fl clear">
-                        <div class="img-text fl">
-                          <%= v %>
-                          <div class="area">
-                            <% productsClassic[v].map(function(v1, i1) { %>
-                              <% if(i1 === 0){ %>
-                                <span style="display: block;"><%= v1.area %></span>
-                              <% } else{ %>
-                                <span><%= v1.area %></span>
-                              <% } %>
-                            <% }) %>
-                          </div>
-                          <div class="pagation-home">
-                            <ul class="pagation-box">
-                              <% productsClassic[v].map(function(v1, i1) { %>
-                                <% if(i1 === 0){ %>
-                                  <li class="on clear"><span>0<%= i1 + 1%></span><em></em><i></i></li>
-                                <% } else{ %>
-                                  <% if(i1 < 9){ %>
-                                      <li class="clear"><span>0<%= i1 + 1%></span><em></em><i></i></li>
-                                  <% } else{ %>
-                                      <li class="clear"><span><%= i1 + 1%></span><em></em><i></i></li>
-                                  <% } %>
-                                <% } %>
-                              <% }) %>
-                            </ul>
-                            <div class="tab-btn clear">
-                              <em class="left fl">&lt;</em>
-                              <em class="right fr">&gt;</em>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="img-wrap prod-item-<%= i + 1 %> fl swiper-container">
-                          <ul class="img-box swiper-wrapper clear">
-                            <% productsClassic[v].map(function(v1, i1) { %>
-                              <li class="swiper-slide swiper-no-swiping item-list" data-index="<%= i1 %>">
-                                <img src="<%= v1.smallImage.url %>" alt="<%= v1.area %>">
-                                <i class="mask"></i>
-                                <em class="icon_plus"></em>
-                              </li>
-                            <% }) %>
-                          </ul>
-                        </div>
-                        <div class="home-prod-popup-wrap">
-                          <div class="prod-popup">
-                            <div class="pop-prod-box">
-                              <div class="wrap-box">
-                                <div class="swiper-container">
-                                  <ul class="pop-wrap swiper-wrapper clear">
-                                    <% productsClassic[v].map(function(v1, i1) { %>
-                                      <li class="swiper-slide">
-                                        <div class="pop-img">
-                                          <div class="v-cell">
-                                            <img src="<%= v1.largerImage.url %>" alt="<%= v1.area %>">
-                                          </div>
-                                        </div>
-                                      </li>
-                                    <% }) %>
-                                  </ul>
-                                </div>
-                                <em class="close"></em>
-                                <em class="left"></em>
-                                <em class="right"></em>
-                              </div>
-                            </div>
-                            <i class="mask"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="prod-info fr">
-                        <% productsClassic[v].map(function(v1, i1) { %>
-                          <% if(i1 === 0){ %>
-                            <p class="intros" style="display: block;"><%- v1.intros.replace(/\n/g, '<i></i>') %></p>
-                          <% } else{ %>
-                            <p class="intros"><%- v1.intros.replace(/\n/g, '<i></i>') %></p>
-                          <% } %>
-                        <% }) %>
-                      </div>
-                    </div>
-                  <% } %>
-                <% } %>
-              <% }) %>
+              <% if (isMobile) { %>
+                <%-include("include/m_home_product_module")%>
+              <% } else{%>
+                <%-include("include/home_product_module")%>
+              <%}%>
             </div>
             <a href="/prodlist" target="_blank" class="view-all">查看全部葡萄酒</a>
           </div>

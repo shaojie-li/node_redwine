@@ -9,6 +9,14 @@
     padding: 37px 87px 33px 73px;
     line-height: 66px;
     background-color: #fff;
+    .g-logo{
+        width: 41%;
+        img {
+            width: 100%;
+            min-width: 340px;
+            max-width: 425px;
+        }
+    }
     &.hasShadow{
         box-shadow: 5px 5px 10px rgba(0,0,0,.3);
     }
@@ -28,4 +36,10 @@
             }
         }
     }
+}
+
+.static-wrapper{
+  .g-header{
+    position: static;
+  }
 }

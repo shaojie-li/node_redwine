@@ -3,6 +3,4 @@ node_modules/*
 public/.sass-cache
 public/psd
 public/psd/*
-public/stylesheets/*.map
-public/sass
-public/sass/*
+public/stylesheets/**/*.map

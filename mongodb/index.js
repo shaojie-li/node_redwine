@@ -12,7 +12,7 @@ mongoose.Promise = global.Promise;
 var options = {
     db_user: "lisouljay",
     db_pwd: "lishaojie123",
-    db_host: "127.0.0.1",
+    db_host: "119.23.54.88",
     db_port: 27017,
     db_name: "redwines"
 };
