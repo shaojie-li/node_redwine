@@ -22,6 +22,7 @@ var getactives = require('./routes/getactives');
 var deleteactives = require('./routes/deleteactives');editactives
 var editactives = require('./routes/editactives');
 var login = require('./routes/login');
+var proddetail = require('./routes/proddetail');
 
 var app = express();
 
@@ -54,6 +55,7 @@ app.use('/getactives', getactives);
 app.use('/deleteactives', deleteactives);
 app.use('/editactives', editactives);
 app.use('/login', login);
+app.use('/product', proddetail);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -127,79 +127,6 @@ define(['swiper'], function(swp) {
 
   		});
   	},
-
-  	/**
-  	 * [activePop 首页活动弹框swiper]
-  	 * @Author   shaojie.li
-  	 * @DateTime 2017-10-19
-  	 * @param    {[String]}   parentClass [父级类名]
-  	 */
-  	activePop: function(parentClass){
-  		var isIE = this.isIE();
-  		var $parent = $(parentClass),
-  				$navItem = $parent.siblings('.pagation-active').
-						find('.pagation-item'),
-					clientWidth = $(window).width(),
-					listBox = $parent.find('.swiper-wrapper'),
-          $mask = $parent.parents('.pop-ctn').siblings('.mask'),
-					listHtml = listBox.html();
-			if(isIE && (isIE.vision === 8)){
-				$parent.parents('.cell-content').width(clientWidth*0.57);
-			}
-
-			$parent.parents('.item').find('.item-wrap').on('click', function(){
-				$('html').addClass('overhide');
-				listBox.html(listHtml);
-				$parent.parents('.active-popup').show(0, function(){
-					var newSwp = new swp(parentClass, {
-						loop: true,
-						autoplay : false,
-						calculateHeight : true,
-						speed:600,
-						autoplayDisableOnInteraction: true,
-						onSlideChangeStart: function(swiper){
-							var index = swiper.activeLoopIndex;
-							$(swiper.container).siblings('.pagation-active').
-								find('.pagation-item').eq(index).addClass('on').
-								siblings('li').removeClass('on');
-					  }
-					});
-					$parent.parents('.pop-ctn').siblings('.close')
-						.on('click', function(){
-							$('html').removeClass('overhide');
-							$parent.siblings('.pagation-active').
-								find('.pagation-item').eq(0).addClass('on').siblings('.pagation-item').removeClass('on');
-							$parent.parents('.active-popup').hide();
-					});
-
-					$navItem.on('click', function(){
-						var index = $(this).index();
-						newSwp.swipeTo(index);
-					});
-
-					$parent.find('.left').on('click', function(e){
-						e.preventDefault();
-						newSwp.swipePrev();
-					});
-
-					$parent.find('.right').on('click', function(e){
-						e.preventDefault();
-						newSwp.swipeNext();
-					});
-
-          $parent.parents('.active-popup').on('click', function(e){
-            var ev = window.event || e;
-            ev.stopPropagation();
-            if(ev.target.className !== 'ctn-box') return;
-            $('html').removeClass('overhide');
-              $parent.siblings('.pagation-active').
-                find('.pagation-item').eq(0).addClass('on').siblings('.pagation-item').removeClass('on');
-              $parent.parents('.active-popup').hide();
-          });
-
-				});
-			});
-  	},
 	
 		/**
 		 * [scrollTo 首页导航滚动]
@@ -239,7 +166,7 @@ define(['swiper'], function(swp) {
 		    		$navItem.parents('.g-header').removeClass('hasShadow');
 		    	}
 	    	}
-	    })
+	    });
    	},
 
    	noticeToggle: function(parentClass){
@@ -278,74 +205,6 @@ define(['swiper'], function(swp) {
    			});
    		});
    	},
-
-   	/**
-  	 * [prodListPopup 产品列表弹出框包含swiper]
-  	 * @Author   shaojie.li
-  	 * @DateTime 2017-10-23
-  	 * @param    {[String]}   parentId 		[父级ID名]
-  	 */
-  	prodListPopup: function(parentsId){
-  		var $parents = $(parentsId),
-  				$listItem = $parents.find('.list-item'),
-  				popListArrHtml = [];
-
-  		for(var i = 0;i < $listItem.length;i++){
-  			var htmlList = $listItem.eq(i).find('.swiper-wrapper').html();
-  			popListArrHtml.push(htmlList);
-  		}
-
-  		$listItem.bind('click', function(e){
-  			var $this = $(this),
-  				  $leftBtn = $this.find('.left'),
-  					$rightBtn = $this.find('.right'),
-  					$closeBtn = $this.find('.close'),
-  					$listBox = $this.find('.swiper-wrapper'),
-  					$popBox = $this.find('.pop-prod-box'),
-  					listHtml = $listBox.html(),
-  					index = $this.index(),
-  					indexList = $this.index() + 1;
-  					
-
-  			$popBox.on('click', function(e){
-  				e.stopPropagation();
-  			});
-
-  			$('html').addClass('overhide');
-  			
-  			$listBox.html(popListArrHtml[index]);
-
-  			$this.find('.prod-popup').show(0, function(){
-  				var swiperClass = '.pop-item-' + indexList;
-  				var newSwp = new swp(swiperClass, {
-							loop: true,
-							autoplay : false,
-							calculateHeight : true,
-							speed:600,
-							autoplayDisableOnInteraction: false
-					});
-
-					$leftBtn.on('click', function(e){
-					    e.preventDefault();
-					    e.stopPropagation();
-					    newSwp.swipePrev();
-					});
-
-					$rightBtn.on('click', function(e){
-					    e.preventDefault();
-					    e.stopPropagation();
-					    newSwp.swipeNext();
-					});
-
-					$closeBtn.on('click', function(e){
-		  			e.stopPropagation();
-		  			$('html').removeClass('overhide');
-		  			$(this).parents('.prod-popup').css('display','none');
-		  		});
-
-  			});
-  		});
-  	},
     
     /* 日期格式话 xxxx-xx-xx */
     dateFormatForHome: function(){
@@ -364,6 +223,22 @@ define(['swiper'], function(swp) {
         dateStr = y + '-' + m + '-' + d
         $listItem.eq(i).find('.pup-time em').text(dateStr);
       }
+    },
+
+    /**
+     * [uniqueArray 数组去重]
+     * @Author   shaojie.li
+     * @DateTime 2018-03-07
+     * @param    {[Array]}   arr    [待去重数组]
+     */
+    uniqueArray: function(arr){
+      var result=[]
+      for(var i=0; i<arr.length; i++){
+        if(result.indexOf(arr[i])==-1){
+          result.push(arr[i])
+        }
+      }
+      return result;
     },
 
     /* 导航菜单展示 */

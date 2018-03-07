@@ -137,11 +137,11 @@ input, select {
     height: 100%; }
   .sticky-footer .main-content {
     min-height: 100%;
-    padding-bottom: 122px;
-    margin-top: -143px;
-    padding-top: 143px; }
+    padding-bottom: 57px;
+    margin-top: -59px;
+    padding-top: 59px; }
   .sticky-footer .common-footer {
-    margin-top: -122px; }
+    margin-top: -58px; }
 
 .g-logo .logo-bd {
   display: block;
@@ -557,7 +557,7 @@ input, select {
     margin-top: 30px; }
 
 .red-wine {
-  padding-top: 40px; }
+  margin-top: 40px; }
   .red-wine .prod-info {
     width: 100%;
     font-size: 14px;
@@ -615,6 +615,8 @@ input, select {
         position: relative;
         float: left;
         width: 100%; }
+        .red-wine .prod-img .img-wrap .item-list a {
+          display: block; }
     .red-wine .prod-img img {
       width: 100%; }
     .red-wine .prod-img .img-text {
@@ -631,7 +633,7 @@ input, select {
       background-color: rgba(255, 255, 255, 0.9); }
 
 .active-home {
-  padding-top: 40px; }
+  margin-top: 40px; }
   .active-home .active-wrap {
     position: relative; }
     .active-home .active-wrap .item {
@@ -1206,3 +1208,13 @@ input, select {
     left: 50%;
     margin-left: -370px;
     background-color: #fafafa; } }
+
+.prodDetail-page img {
+  width: 100%; }
+
+.prodDetail-page p {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 100px 0; }

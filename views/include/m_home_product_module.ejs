@@ -6,8 +6,7 @@
           <ul class="img-box swiper-wrapper">
             <% productsClassic[v].map(function(v1, i1) { %>
               <li class="swiper-slide swiper-no-swiping item-list" data-index="<%= i1 %>">
-                <img src="<%= v1.smallImage.url %>" alt="<%= v1.area %>">
-                <i class="mask"></i>
+                <a href="/product/<%= v1._id %>"><img src="<%= v1.smallImage.url %>" alt="<%= v1.area %>"></a>
                 <div class="prod-info">
                   <% if(i1 === 0){ %>
                     <p class="intros" style="display: block;"><%- v1.intros.replace(/\n/g, '<i></i>') %></p>

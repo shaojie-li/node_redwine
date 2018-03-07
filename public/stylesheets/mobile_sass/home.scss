@@ -68,7 +68,7 @@
 }
 
 .red-wine{
-    padding-top: 40px;
+    margin-top: 40px;
     .prod-info{
         width: 100%;
         font-size: 14px;
@@ -142,6 +142,9 @@
                 position: relative;
                 float: left;
                 width: 100%;
+                a{
+                    display: block;
+                }
             }
         }
         img{
@@ -164,7 +167,7 @@
 }
 
 .active-home{
-    padding-top: 40px;
+    margin-top: 40px;
     .active-wrap{
         position: relative;
         .item{

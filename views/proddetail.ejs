@@ -1,0 +1,26 @@
+	<%-include("include/header", {title: title})%>
+    <div class="global-wrapper static-wrapper">
+      <!-- S 公共头部 -->
+      <div class="g-header clear">
+        <% if (isMobile) { %>
+          <%-include("include/navmobile")%>
+        <% } else{%>
+          <%-include("include/navpc")%>
+        <%}%>
+      </div>
+      <!-- E 公共头部 -->
+      <div class="main-content">
+        <div class="prodDetail-page">
+          <% if (!!proddtailData) { %>
+            <img src="<%= proddtailData.largerImage.url %>" alt="<%= proddtailData.largerImage.name %>" />
+          <% } else{ %>
+            <p>暂无该条产品的详细信息！</p>
+          <% } %>
+        </div>
+      </div>
+      <!-- S 公共尾部 -->
+      <%-include("include/footer")%>
+      <!-- E 公共尾部 -->
+    </div>
+  </body>
+</html>

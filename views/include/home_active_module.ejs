@@ -1,0 +1,78 @@
+<div class="active-wrap common-wrap">
+  <ul class="clear">
+    <% actives.map(function(v, i){ %>
+      <li class="item-<%= i + 1 %> item">
+        <% if (isMobile) { %>
+          <div class="item-wrap">
+            <img src="<%= v.listImg.url %>" alt="">
+            <p class="active-text" title="<%= v.titleFirst %>"><%= v.titleSecond %><span class="icon-arrow"></span></p>
+          </div>
+        <% } else{%>
+          <div class="item-wrap">
+            <img src="<%= v.listImg.url %>" alt="">
+            <p class="active-text" title="<%= v.titleFirst %>"><%= v.titleFirst %></p>
+            <div class="active-title">
+                <div class="wrap">
+                    <p title="<%= v.titleSecond %>"><%= v.titleSecond %></p>
+                </div>
+            </div>
+          </div>
+          <span class="icon-arrow"></span>
+        <%}%>
+        
+        <!-- 活动弹框 -->
+        <div class="active-popup">
+          <div class="pop-ctn">
+            <div class="ctn-box">
+              <div class="cell-content clear">
+                <div class="cell-left fl">
+                  <div class="content">
+                    <div class="img-box pop-swiper-<%= i + 1 %> swiper-container">
+                      <ul class="clear swiper-wrapper">
+                        <% v.detailImg.map(function(v1, i1){ %>
+                          <li class="swiper-slide">
+                            <img src="<%= v1.url %>" alt="">
+                          </li>
+                        <% }) %>
+                      </ul>
+                      <em class="left"></em>
+                      <em class="right"></em>
+                    </div>
+                    <div class="pagation-active">
+                      <ul class="clear">
+                        <% v.detailImg.map(function(v1, i1){ %>
+                          <% if(i1 === 0){ %>
+                            <li class="pagation-item on">
+                              <img src="<%= v1.url %>" alt="">
+                            </li>
+                          <% } else{ %>
+                            <li class="pagation-item">
+                              <img src="<%= v1.url %>" alt="">
+                            </li>
+                          <% } %>
+                        <% }) %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="cell-right fr">
+                  <div class="content">
+                    <div class="ctn-top">
+                      <h6 class="cell-title" title="<%= v.titleFirst %>"><%= v.titleFirst %></h6>
+                      <span class="pup-time">发布日期：<em><%= v.date %></em></span>
+                    </div>
+                    <div class="ctn-bottom">
+                      <p class="text"><%= v.titleSecond %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mask"></div>
+          <em class="close"></em>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+</div>

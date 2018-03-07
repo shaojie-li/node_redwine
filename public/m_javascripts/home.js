@@ -29,13 +29,25 @@ requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
 		c.prodSwiper('#prod-item-' + index);
 	}
 
-	for(var i = 0;i < $activeItem.length;i++){
-		var index = i + 1;
-		c.activePop('.pop-swiper-' + index);
+	var imgArr = [], img = [], flag = 0;
+	$('.main-content img').each(function(index, el) {
+		imgArr.push(el.src);
+	});
+	var newArray = c.uniqueArray(imgArr);
+	for(var i = 0 ; i < newArray.length ; i++){
+	    img[i] = new Image();
+	    img[i].src = newArray[i];
+	    img[i].onload = function(){
+	       //第i张图片加载完成
+	       flag++;
+	       // document.title = Math.round(flag/newArray.length*100) + '%';
+	       if( flag == newArray.length ){
+	          //全部加载完成
+	          c.scrollTo('.g-nav li','.scrollItem', true, headerHeight, true);
+	       }
+	    }
 	}
 
-	c.scrollTo('.g-nav li','.scrollItem', true, headerHeight, true);
-	
 	c.noticeToggle('.notice-popup');
 	
 	c.dateFormatForHome();

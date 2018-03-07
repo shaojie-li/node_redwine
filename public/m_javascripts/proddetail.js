@@ -1,8 +1,8 @@
 require.config({
-    baseUrl: './m_javascripts',
+    baseUrl: '/m_javascripts',
     paths:{
-        'jquery': 'libs/jquery',
-        'swiper': 'libs/swiper'
+        'jquery': '/m_javascripts/libs/jquery',
+        'swiper': '/m_javascripts/libs/swiper'
     },
     shim:{
         /*'swiper': ['jquery']*/
@@ -12,8 +12,8 @@ require.config({
 requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
 
 	var isIE = c.isIE(), 
-		isIE8 = !!isIE && isIE.vision === 8,
-        $prodPopupList = $('#Js-prodlist-popup .list-item');
+		isIE8 = !!isIE && isIE.vision === 8;
 
     c.extMenu();
+
 })
