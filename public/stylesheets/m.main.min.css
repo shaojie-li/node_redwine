@@ -222,16 +222,20 @@ input, select {
       margin: 5px 0; }
 
 .common-footer {
-  padding: 30px 90px 25px 72px;
+  padding: 15px 0 10px;
   background-color: #000;
   color: #fff;
   font-size: 14px; }
-  .common-footer .g-logo .logo-bd {
-    width: 423px;
-    height: 67px;
-    background-image: url("../images/logo_footer.png");
-    background-repeat: no-repeat;
-    text-indent: -99999px; }
+  .common-footer .g-logo {
+    float: none; }
+    .common-footer .g-logo .logo-bd {
+      width: 215px;
+      height: 33px;
+      background-image: url("../images/logo_footer.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      text-indent: -99999px;
+      margin: 0 auto; }
   .common-footer .company_cpy {
     margin-top: 50px; }
 
@@ -560,16 +564,14 @@ input, select {
     line-height: 18px;
     color: #333;
     margin-top: 8px; }
-    .red-wine .prod-info .intros {
-      display: none; }
-      .red-wine .prod-info .intros i {
-        display: block;
-        height: 8px; }
+    .red-wine .prod-info .intros i {
+      display: block;
+      height: 8px; }
   .red-wine .prod-item {
-    padding-bottom: 10%; }
+    padding-bottom: 20px; }
   .red-wine .pagation-home {
     width: 280px;
-    margin: 16px auto 0; }
+    margin: 10px auto 0; }
     .red-wine .pagation-home .pagation-box {
       text-align: center;
       color: #000;
@@ -629,40 +631,22 @@ input, select {
       background-color: rgba(255, 255, 255, 0.9); }
 
 .active-home {
-  margin-top: 116px; }
+  padding-top: 40px; }
   .active-home .active-wrap {
     position: relative; }
     .active-home .active-wrap .item {
-      position: absolute;
-      top: 0;
-      width: 28%;
-      cursor: pointer;
-      overflow: hidden; }
+      width: 48%;
+      overflow: hidden;
+      float: left;
+      margin-bottom: 3%; }
+      .active-home .active-wrap .item:nth-child(even) {
+        float: right; }
       .active-home .active-wrap .item .item-wrap {
         position: relative;
         overflow: hidden; }
       .active-home .active-wrap .item img {
         width: 100%;
         height: auto; }
-      .active-home .active-wrap .item.item-1 {
-        left: 3.6%; }
-      .active-home .active-wrap .item.item-2 {
-        left: 36%;
-        margin-top: 12%; }
-      .active-home .active-wrap .item.item-3 {
-        right: 4.5%;
-        margin-top: 8%; }
-      .active-home .active-wrap .item.item-4 {
-        left: 3%;
-        margin-top: 39%; }
-      .active-home .active-wrap .item.item-5 {
-        left: 36%;
-        margin-top: 50%; }
-      .active-home .active-wrap .item.item-6 {
-        right: 5%;
-        margin-top: 46%; }
-      .active-home .active-wrap .item:hover .active-title {
-        margin-top: -79px; }
       .active-home .active-wrap .item .active-text {
         position: relative;
         height: 22px;
@@ -671,6 +655,8 @@ input, select {
         background-color: #fff;
         padding: 0 10px;
         overflow: hidden;
+        color: #333;
+        font-size: 14px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap; }
@@ -702,20 +688,17 @@ input, select {
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 2; }
       .active-home .active-wrap .item .icon-arrow {
-        position: relative;
-        display: block;
-        text-align: right;
-        z-index: 30;
-        margin-top: -8px; }
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 30; }
         .active-home .active-wrap .item .icon-arrow:after {
           content: '';
           display: inline-block;
           width: 4px;
-          height: 36px;
+          height: 30px;
           background: url(../images/home/home_spirit.png) no-repeat;
           background-position: -30px -16px; }
-  .active-home .view-all {
-    margin-top: 58%; }
 
 .notice-home {
   margin-top: 150px;
@@ -827,34 +810,46 @@ input, select {
     min-width: 451px; }
 
 .contact-us {
-  margin-top: 200px;
-  padding: 70px 0 150px;
+  margin-top: 40px;
+  padding: 30px 0 20px;
   background: #3d3d3d; }
-  .contact-us .contact-wrap {
-    min-width: 540px; }
   .contact-us .contact-title {
-    margin-bottom: 60px;
-    font-size: 48px;
+    position: relative;
+    margin-bottom: 36px;
+    font-size: 24px;
     color: #eee;
     text-align: center; }
+    .contact-us .contact-title:after {
+      content: ' ';
+      position: absolute;
+      left: 50%;
+      bottom: -16px;
+      margin-left: -22px;
+      width: 44px;
+      height: 2px;
+      background-color: #fff; }
   .contact-us .info-us {
-    width: 45%; }
+    float: none;
+    width: 100%; }
     .contact-us .info-us dl {
+      position: relative;
       color: #eee;
       font-size: 14px;
       margin-bottom: 30px; }
     .contact-us .info-us dt, .contact-us .info-us dd {
-      float: left;
       line-height: 36px; }
     .contact-us .info-us dt {
-      width: 28%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 66px;
       margin-right: 5px;
-      min-width: 70px;
       font-size: 14px;
       font-weight: bold; }
     .contact-us .info-us dd {
-      width: 66%;
-      min-width: 170px;
+      width: 100%;
+      padding-left: 71px;
+      box-sizing: border-box;
       text-align: justify; }
       .contact-us .info-us dd .bd-map {
         position: relative;
@@ -872,7 +867,8 @@ input, select {
           margin-top: -2px;
           background: url(../images/home/home_spirit.png) 0 -60px no-repeat; }
   .contact-us .contact-message {
-    width: 45%; }
+    float: none;
+    width: 100%; }
     .contact-us .contact-message .msg-title {
       font-size: 18px;
       color: #eee;
@@ -880,22 +876,24 @@ input, select {
       line-height: 30px;
       margin-bottom: 25px; }
     .contact-us .contact-message dl {
+      position: relative;
       color: #eee;
       font-size: 14px;
-      margin-bottom: 30px;
-      height: 40px;
-      line-height: 40px; }
-    .contact-us .contact-message dt, .contact-us .contact-message dd {
-      float: left; }
+      margin-bottom: 12px; }
     .contact-us .contact-message dt {
-      width: 15%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 66px;
       margin-right: 5px;
-      min-width: 70px;
       font-size: 14px;
-      font-weight: bold; }
+      font-weight: bold;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
     .contact-us .contact-message dd {
-      width: 66%;
-      min-width: 170px;
+      width: 100%;
+      padding-left: 71px;
+      box-sizing: border-box;
       text-align: justify; }
       .contact-us .contact-message dd input, .contact-us .contact-message dd textarea, .contact-us .contact-message dd button, .contact-us .contact-message dd a {
         width: 100%;
@@ -907,19 +905,23 @@ input, select {
         background-color: #fff;
         font-family: 'Microsoft YaHei'; }
       .contact-us .contact-message dd input {
+        width: 95%;
         height: 14px;
         line-height: 14px; }
       .contact-us .contact-message dd textarea {
+        width: 95%;
         height: 88px;
         line-height: 18px;
         resize: none; }
       .contact-us .contact-message dd a {
+        width: 100%;
         display: block;
-        height: 14px;
+        height: 36px;
         line-height: 14px;
         text-align: center;
         color: #eee;
-        background-color: #000; }
+        background-color: #000;
+        box-sizing: border-box; }
 
 .prodList-page .main-content {
   padding-top: 0; }
@@ -1193,3 +1195,14 @@ input, select {
     height: 155px;
     border: 1px solid #adafb3;
     resize: none; }
+
+@media screen and (min-width: 1024px) {
+  .global-wrapper {
+    width: 740px;
+    margin: 0 auto;
+    background-color: #fafafa; }
+  .g-header {
+    width: 740px;
+    left: 50%;
+    margin-left: -370px;
+    background-color: #fafafa; } }

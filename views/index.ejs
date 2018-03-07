@@ -84,7 +84,13 @@
                 <ul class="clear">
                   <% actives.map(function(v, i){ %>
                     <li class="item-<%= i + 1 %> item">
-                      <div class="item-wrap">
+                      <% if (isMobile) { %>
+                        <div class="item-wrap">
+                          <img src="<%= v.listImg.url %>" alt="">
+                          <p class="active-text" title="<%= v.titleFirst %>"><%= v.titleSecond %><span class="icon-arrow"></span></p>
+                        </div>
+                      <% } else{%>
+                        <div class="item-wrap">
                           <img src="<%= v.listImg.url %>" alt="">
                           <p class="active-text" title="<%= v.titleFirst %>"><%= v.titleFirst %></p>
                           <div class="active-title">
@@ -92,8 +98,10 @@
                                   <p title="<%= v.titleSecond %>"><%= v.titleSecond %></p>
                               </div>
                           </div>
-                      </div>
-                      <span class="icon-arrow"></span>
+                        </div>
+                        <span class="icon-arrow"></span>
+                      <%}%>
+                      
                       <!-- 活动弹框 -->
                       <div class="active-popup">
                         <div class="pop-ctn">
@@ -318,7 +326,7 @@
                         <label for="contacts">联系人</label>
                       </dt>
                       <dd>
-                        <input name="contacts" id="contacts" type="text" autocomplete="off" />
+                        <input disabled placeholder="联系人" name="contacts" id="contacts" type="text" autocomplete="off" />
                       </dd>
                     </dl>
                     <dl class="clear">
@@ -326,7 +334,7 @@
                         <label for="tel">Tel</label>
                       </dt>
                       <dd>
-                        <input name="tel" id="tel" type="text" autocomplete="off" />
+                        <input disabled placeholder="电话" name="tel" id="tel" type="text" autocomplete="off" />
                       </dd>
                     </dl>
                     <dl class="clear">
@@ -334,7 +342,7 @@
                         <label for="email">E-mail</label>
                       </dt>
                       <dd>
-                        <input name="email" id="email" type="text" autocomplete="off" />
+                        <input disabled placeholder="邮箱" name="email" id="email" type="text" autocomplete="off" />
                       </dd>
                     </dl>
                     <dl class="clear">
@@ -342,13 +350,13 @@
                         <label for="comments">您的留意</label>
                       </dt>
                       <dd>
-                        <textarea name="comments" id="comments" type="text"></textarea>
+                        <textarea disabled placeholder="请输入您的留言" name="comments" id="comments" type="text"></textarea>
                       </dd>
                     </dl>
                     <dl class="clear">
                       <dt>&nbsp;</dt>
                       <dd>
-                        <a href="mailto:108274244@qq.com" id="submitMsg" onclick="alert('暂不支持留言')">提交</a>
+                        <a href="javascript: void(0);" id="submitMsg" onclick="alert('暂不支持留言')">提交</a>
                       </dd>
                     </dl>
                   </form>
