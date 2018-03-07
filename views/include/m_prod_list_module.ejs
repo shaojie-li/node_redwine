@@ -1,0 +1,67 @@
+<div class="prodList-page">
+	<div class="filter-class">
+		<div class="content clear">
+			<div class="country filter-item on" id="country">
+				<dl class="clear">
+					<dt>国家</dt>
+          <dl class="inner-dl fl clear">
+            <% if(params.country === ''){ %>
+              <dd class="on"><a href="/prodlist?type=<%= params.type %>">不限</a></dd>
+            <% } else{ %>
+              <dd><a href="/prodlist?type=<%= params.type %>">不限</a></dd>
+            <% } %>
+            <% country.map(function(v, i){ %>
+              <% if(params.country === v){ %>
+                <dd class="on"><a href="/prodlist?country=<%= v %>&type=<%= params.type %>"><%= v %></a></dd>
+              <% } else{ %>
+                <dd><a href="/prodlist?country=<%= v %>&type=<%= params.type %>"><%= v %></a></dd>
+              <% } %>
+            <% }) %>
+          </dl>
+				</dl>
+			</div>
+			<div class="type filter-item" id="type">
+				<dl class="clear">
+					<dt>类型</dt>
+          <dl class="inner-dl fl clear">
+  					<% if(params.type === ''){ %>
+              <dd class="on"><a href="/prodlist?country=<%= params.country %>">不限</a></dd>
+            <% } else{ %>
+              <dd><a href="/prodlist?country=<%= params.country %>">不限</a></dd>
+            <% } %>
+            <% type.map(function(v, i){ %>
+              <% if(params.type === v){ %>
+                <dd class="on"><a href="/prodlist?country=<%= params.country %>&type=<%= v %>"><%= v %></a></dd>
+              <% } else{ %>
+                <dd><a href="/prodlist?country=<%= params.country %>&type=<%= v %>"><%= v %></a></dd>
+              <% } %>
+            <% }) %>
+          </dl>
+				</dl>
+			</div>
+		</div>
+	</div>
+  <div class="prod-list" id="Js-prodlist-popup">
+    <div class="content">
+      <ul class="list-wrap clear">
+        <% if(products.length){ %>
+          <% products.map(function(v, i){ %>
+            <li class="list-item">
+              <div class="wrap">
+                <div class="img-box">
+                  <img src="<%= v.listImage.url %>" alt="">
+                </div>
+                <div class="title-box">
+                  <p class="title-first"><%= v.name %></p>
+                  <p class="title-second"><%= v.enName %></p>
+                </div>
+              </div>
+            </li>
+          <% }) %>
+        <% } else{ %>
+          <p class="product-status">暂无产品</p>
+        <% } %>
+      </ul>
+      </div>
+    </div>
+</div>
