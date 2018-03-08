@@ -26,6 +26,7 @@ router.get('/:id', function(req, res, next) {
 		for (let i = 0;i < dataArr.length;i++) {
 			if(dataArr[i]._id == req.params.id) {
 				baseData.proddtailData = dataArr[i];
+				baseData.title = dataArr[i].name + '-' + dataArr[i].types;
 			}
 		};
 

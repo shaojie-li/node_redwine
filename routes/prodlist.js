@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
 	let navList = [];
 
-	let baseData = { title: '葡萄酒列表页', pageName: 'prodList', 'isMobile': isMobile, 'navList': navList};
+	let baseData = { title: '葡萄酒-列表', pageName: 'prodList', 'isMobile': isMobile, 'navList': navList};
 
 	let reqCountry = req.query.country,
 		reqType = req.query.type,
