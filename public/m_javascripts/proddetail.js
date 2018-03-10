@@ -14,6 +14,6 @@ requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
 	var isIE = c.isIE(), 
 		isIE8 = !!isIE && isIE.vision === 8;
 
-    c.extMenu();
+    c.extMenu('.prodDetail-page');
 
 })

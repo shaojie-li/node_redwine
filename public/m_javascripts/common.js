@@ -242,7 +242,7 @@ define(['swiper'], function(swp) {
     },
 
     /* 导航菜单展示 */
-    extMenu: function(){
+    extMenu: function(main){
       var $extBtn = $('.ext-icon'),
           $extCtn = $('.g-nav'),
           $gNavItem = $extCtn.find('li').not(':eq(0)');
@@ -251,7 +251,31 @@ define(['swiper'], function(swp) {
       });
       $gNavItem.on('click', function(e){
         $extCtn.hide('fast');
+      });
+      $(main).on('click', function(){
+        $extCtn.hide('fast');
       })
+    },
+
+    /* 列表筛选 */
+    listFilter: function(){
+      var $navCountry = $('#country'),
+          $extBtn = $('.ext-icon'),
+          $navType = $('#type'),
+          $navItem = $('.filter-item');
+      console.log($navCountry.find('dt'))
+      $navItem.find('dt').on('click', function(){
+        $(this).parents('.filter-item').addClass('on').siblings('.filter-item').removeClass('on');
+      });
+      $navItem.find('dd').on('click', function(){
+        $('.filter-class').hide('fast');
+      });
+      $('#Js-prodlist-popup').on('click', function(){
+        $('.filter-class').hide('fast');
+      });
+      $extBtn.on('click', function(){
+        $('.filter-class').toggle('fast');
+      });
     }
   }
 });

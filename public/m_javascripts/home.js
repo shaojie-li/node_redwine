@@ -52,5 +52,5 @@ requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
 	
 	c.dateFormatForHome();
 
-	c.extMenu();
+	c.extMenu('.home-page');
 });

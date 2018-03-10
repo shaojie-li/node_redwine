@@ -11,6 +11,10 @@
     width: 100%;
     z-index: 100;
     background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    &.no-border{
+        border: none;
+    }
     .g-logo{
         position: relative;
         width: 200px;

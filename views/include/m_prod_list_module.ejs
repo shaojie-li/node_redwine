@@ -1,5 +1,5 @@
 <div class="prodList-page">
-	<div class="filter-class">
+	<div class="filter-class" style="display: none;">
 		<div class="content clear">
 			<div class="country filter-item on" id="country">
 				<dl class="clear">
@@ -49,7 +49,7 @@
             <li class="list-item">
               <div class="wrap">
                 <div class="img-box">
-                  <img src="<%= v.listImage.url %>" alt="">
+                  <a href="/product/<%= v._id %>"><img src="<%= v.listImage.url %>" alt="<%= v.area %>"></a>
                 </div>
                 <div class="title-box">
                   <p class="title-first"><%= v.name %></p>

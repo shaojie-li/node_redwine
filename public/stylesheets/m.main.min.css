@@ -138,7 +138,6 @@ input, select {
   .sticky-footer .main-content {
     min-height: 100%;
     padding-bottom: 57px;
-    margin-top: -59px;
     padding-top: 59px; }
   .sticky-footer .common-footer {
     margin-top: -58px; }
@@ -180,7 +179,10 @@ input, select {
   top: 0;
   width: 100%;
   z-index: 100;
-  background-color: #fff; }
+  background-color: #fff;
+  border-bottom: 1px solid #ddd; }
+  .g-header.no-border {
+    border: none; }
   .g-header .g-logo {
     position: relative;
     width: 200px;
@@ -935,37 +937,73 @@ input, select {
   top: 59px;
   width: 100%;
   max-width: 740px; }
-  .prodList-page .filter-class .content .filter-item dt, .prodList-page .filter-class .content .filter-item dd {
-    background-color: #fff;
-    font-size: 14px; }
-  .prodList-page .filter-class .content .filter-item dt {
-    width: 50%;
-    text-align: center;
-    padding: 12px 20px;
-    border: 1px solid #ddd;
-    box-sizing: border-box; }
-  .prodList-page .filter-class .content .filter-item dd {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid #ddd; }
-    .prodList-page .filter-class .content .filter-item dd a {
-      position: relative;
+  .prodList-page .filter-class dt {
+    position: relative; }
+    .prodList-page .filter-class dt:before {
+      content: '';
+      position: absolute;
+      background: url("../../images/spirit.png") no-repeat;
+      background-size: 13px 18px;
+      -webkit-transition: all 200ms;
+      transition: all 200ms; }
+  .prodList-page .filter-class .content .filter-item {
+    z-index: 20; }
+    .prodList-page .filter-class .content .filter-item dt, .prodList-page .filter-class .content .filter-item dd {
+      background-color: #fff;
+      font-size: 14px; }
+    .prodList-page .filter-class .content .filter-item dt {
+      width: 50%;
+      text-align: center;
+      padding: 12px 20px;
+      border: 1px solid #ddd;
+      box-sizing: border-box; }
+      .prodList-page .filter-class .content .filter-item dt:before {
+        left: 50%;
+        top: 50%;
+        width: 9px;
+        height: 5px;
+        margin-left: 25px;
+        margin-top: -3px; }
+    .prodList-page .filter-class .content .filter-item dd {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid #ddd; }
+      .prodList-page .filter-class .content .filter-item dd a {
+        position: relative;
+        color: #333;
+        display: block;
+        padding: 12px 20px 12px 48px; }
+      .prodList-page .filter-class .content .filter-item dd:active {
+        background-color: rgba(223, 223, 223, 0.95); }
+    .prodList-page .filter-class .content .filter-item .inner-dl {
+      width: 100%;
+      display: none; }
+    .prodList-page .filter-class .content .filter-item.on.filter-item {
+      z-index: 10; }
+    .prodList-page .filter-class .content .filter-item.on dt {
+      background-color: #ddd;
       color: #333;
-      display: block;
-      padding: 12px 20px 12px 48px; }
-    .prodList-page .filter-class .content .filter-item dd:active {
-      background-color: rgba(223, 223, 223, 0.95); }
-  .prodList-page .filter-class .content .filter-item .inner-dl {
-    width: 100%;
-    display: none; }
-  .prodList-page .filter-class .content .filter-item.on dt {
-    background-color: #ddd;
-    color: #333;
-    font-weight: bold; }
-  .prodList-page .filter-class .content .filter-item.on dd {
-    background-color: rgba(247, 247, 247, 0.95); }
-  .prodList-page .filter-class .content .filter-item.on .inner-dl {
-    display: block; }
+      font-weight: bold; }
+      .prodList-page .filter-class .content .filter-item.on dt:before {
+        transform: rotate(-180deg); }
+    .prodList-page .filter-class .content .filter-item.on dd {
+      position: relative;
+      background-color: rgba(247, 247, 247, 0.95); }
+      .prodList-page .filter-class .content .filter-item.on dd:active {
+        background-color: rgba(221, 221, 221, 0.95); }
+      .prodList-page .filter-class .content .filter-item.on dd.on:before {
+        content: '';
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        margin-top: -5px;
+        background: url("../../images/spirit.png") 0 -8px no-repeat;
+        background-size: 13px 18px;
+        width: 13px;
+        height: 10px; }
+    .prodList-page .filter-class .content .filter-item.on .inner-dl {
+      display: block; }
   .prodList-page .filter-class .content .country {
+    position: relative;
     width: 100%;
     float: left; }
     .prodList-page .filter-class .content .country.filter-item dt {
@@ -981,7 +1019,8 @@ input, select {
       float: right; }
 
 .prodList-page .prod-list {
-  padding: 89px 0; }
+  padding: 30px 0;
+  border-top: 1px solid #ddd; }
   .prodList-page .prod-list .content {
     margin: 0 auto; }
     .prodList-page .prod-list .content ul {

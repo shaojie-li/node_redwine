@@ -16,4 +16,6 @@ requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
         $prodPopupList = $('#Js-prodlist-popup .list-item');
 
     c.extMenu();
+
+    c.listFilter();
 })

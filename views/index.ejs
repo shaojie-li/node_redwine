@@ -1,7 +1,7 @@
 <%-include("include/header", {title: title})%>
     <div class="global-wrapper">
       <!-- S 公共头部 -->
-      <div class="g-header clear">
+      <div class="g-header no-border clear">
         <% if (isMobile) { %>
           <%-include("include/navmobile")%>
         <% } else{%>
@@ -74,7 +74,11 @@
                 <%-include("include/home_product_module")%>
               <%}%>
             </div>
-            <a href="/prodlist" target="_blank" class="view-all">查看全部葡萄酒</a>
+            <% if (isMobile) { %>
+               <a href="/prodlist" class="view-all">查看全部葡萄酒</a>
+            <% } else{%>
+               <a href="/prodlist" target="_blank" class="view-all">查看全部葡萄酒</a>
+            <%}%>
           </div>
           <!-- E 葡萄酒 -->
           <!-- S 精彩活动 -->
