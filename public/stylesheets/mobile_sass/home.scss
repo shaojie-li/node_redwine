@@ -75,7 +75,14 @@
         line-height: 18px;
         color: #333;
         margin-top: 8px;
+        text-align: center;
         .intros{
+            span{
+                display: block;
+                font-weight: bold;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
             i{
                 display: block;
                 height: 8px;
