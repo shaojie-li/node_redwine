@@ -1,8 +1,8 @@
 require.config({
-    baseUrl: './m_javascripts',
+    baseUrl: '/m_javascripts',
     paths:{
-        'jquery': 'libs/jquery',
-        'swiper': 'libs/swiper'
+        'jquery': '/m_javascripts/libs/jquery',
+        'swiper': '/m_javascripts/libs/swiper'
     },
     shim:{
         /*'swiper': ['jquery']*/

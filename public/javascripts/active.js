@@ -20,5 +20,4 @@ requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
         c.activePop('.pop-swiper-' + index);
     }
     
-    console.log('isIE8', isIE8);
 })

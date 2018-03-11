@@ -1,0 +1,31 @@
+<div class="global-wrapper">
+  <!-- S 公共头部 -->
+  <div class="g-header clear">
+    <%-include("./navmobile")%>
+  </div>
+  <div class="main-content">
+    <div class="active-page">
+      <div class="active-banner">
+        <img src="/images/active/m_active_banner.jpg" alt="">
+      </div>
+      <div class="active-content">
+        <div class="active-wrap">
+          <ul>
+            <% if(actives.length){ %>
+              <% actives.map(function(v, i){ %>
+                <li class="item">
+                  <div class="item-wrap">
+                    <a href="/active/<%= v._id %>"><img src="<%= v.listImg.url %>" alt=""></a>
+                    <p class="active-text" title="<%= v.titleSecond %>"><%= v.titleSecond %></p>
+                  </div>
+                  <span class="icon-arrow"></span>
+                </li>
+              <% }) %>
+            <% } else{%>
+              <p class="actives-status">暂无产品</p>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

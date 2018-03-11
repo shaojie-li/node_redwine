@@ -10,22 +10,23 @@
 	}
 
 	.active-content{
-		width: 53%;
-		margin: 5% auto 0;
+		padding: 20px;
 	}
 
 	.active-wrap{
     position: relative;
     ul{
-    	margin-right: -1%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
     .item{
-        float: left;
-        width: 31%;
-        margin-right: 2%;
+        position: relative;
+        width: 30%;
         margin-bottom: 2%;
         cursor: pointer;
         overflow: hidden;
+        flex: 0 1 auto;
         .item-wrap{
             position: relative;
             overflow: hidden;
@@ -33,34 +34,6 @@
         img{
             width: 100%;
             height: auto;
-        }
-        &.item-1{
-            left: 3.6%;
-        }
-        &.item-2{
-            left: 36%;
-            margin-top: 12%;
-        }
-        &.item-3{
-            right: 4.5%;
-            margin-top: 8%;
-        }
-        &.item-4{
-            left: 3%;
-            margin-top: 39%;
-        }
-        &.item-5{
-            left: 36%;
-            margin-top: 50%;
-        }
-        &.item-6{
-            right: 5%;
-            margin-top: 46%;
-        }
-        &:hover{
-            .active-title{
-                margin-top: -79px;
-            }
         }
         .active-text{
             position: relative;
@@ -101,8 +74,9 @@
             }
         }
         .icon-arrow{
-            position: relative;
-            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
             text-align: right;
             z-index: 30;
             margin-top: -8px;
@@ -110,7 +84,7 @@
                 content: '';
                 display: inline-block;
                 width: 4px;
-                height: 36px;
+                height: 20px;
                 background: url(../images/home/home_spirit.png) no-repeat;
                 background-position: -30px -16px;
             }
@@ -118,4 +92,58 @@
     }
 	}
 
+}
+
+.activeDetail-page{
+    .swiper-slide{
+        img{
+            width: 100%;
+        }
+    }
+    .pagation-active{
+        padding: 20px 20px 13px;
+    }
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .pagation-item{
+        width: 20%;
+        margin-bottom: 3px;
+        img{
+            width: 100%;
+            border: 3px solid #fff;
+        }
+        &.on{
+            img{
+                border: 3px solid #262628;
+            }
+        }
+    }
+    .active-intro{
+        padding: 0 20px;
+        .intro-title{
+            padding: 16px 0;
+            border: 1px solid #d7d7d7;
+            border-left: none;
+            border-right: none;
+            h4{
+                font-weight: bold;
+                font-size: 20px;
+                color: #333;
+                margin-bottom: 8px;
+                line-height: 24px;
+            }
+            p{
+                font-size: 14px;
+                color: #999;
+            }
+        }
+    }
+    .intro-content{
+        font-size: 16px;
+        line-height: 24px;
+        color: #333;
+        padding: 18px 0; 
+    }
 }

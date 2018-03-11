@@ -1,8 +1,8 @@
 require.config({
-    baseUrl: './m_javascripts',
+    baseUrl: '/m_javascripts',
     paths:{
-        'jquery': 'libs/jquery',
-        'swiper': 'libs/swiper'
+        'jquery': '/m_javascripts/libs/jquery',
+        'swiper': '/m_javascripts/libs/swiper'
     },
     shim:{
         /*'swiper': ['jquery']*/
@@ -15,6 +15,8 @@ requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
 		isIE8 = !!isIE && isIE.vision === 8,
         $activeItem = $('.active-wrap .item');
     
-    c.extMenu();
+    c.extMenu('.active-page');
+
+    c.activeSwiper('#activeDetail');
 
 })

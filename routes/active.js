@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 	let ua = req.headers['user-agent'].toLowerCase();  
 	let isMobile = ua.match(/(iphone|ipod|ipad|android)/) ? true : false;
 
-	let navList = [];
+	let navList = isMobile ? ['首页'] : [];
 
 	let baseData = { title: '活动列表页', pageName: 'active', 'isMobile': isMobile, 'navList': navList};
 
@@ -26,5 +26,32 @@ router.get('/', function(req, res, next) {
 	});
   
 });
+
+router.get('/:id', function(req, res, next) {
+	let ua = req.headers['user-agent'].toLowerCase();  
+	let isMobile = ua.match(/(iphone|ipod|ipad|android)/) ? true : false;
+
+	let navList = ['首页'];
+
+	let baseData = { title: '活动详情', pageName: 'active', 'isMobile': isMobile, 'navList': navList};
+
+	Home.findById('59f72895ca8e128c96492698')
+	.select({'actives': 1})
+	.exec(function(err, activeList){
+		if(err) return handleError(err);
+		let dbData = activeList._doc;
+		let localData = [];
+		baseData.activeDetail = null;
+		localData = dbData.actives.filter(function(v, i){
+			return v._id == req.params.id;
+		});
+		baseData.activeDetail = localData[0];
+		baseData.title = localData[0].titleSecond;
+		let data = Object.assign({}, baseData);
+
+		res.render('activedetail',data);
+	});
+});
+
 
 module.exports = router;

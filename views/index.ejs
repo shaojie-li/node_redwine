@@ -89,7 +89,11 @@
               <% } else{%>
                 <%-include("include/home_active_module")%>
               <%}%>
-              <a href="/active" target="_blank" class="view-all">查看全部精彩活动</a>
+              <% if (isMobile) { %>
+                 <a href="/active" class="view-all">查看全部精彩活动</a>
+              <% } else{%>
+                 <a href="/active" target="_blank" class="view-all">查看全部精彩活动</a>
+              <%}%>
           </div>
           <!-- E 精彩活动 -->
           <!-- S 公告 -->

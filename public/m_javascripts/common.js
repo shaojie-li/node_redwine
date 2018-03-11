@@ -127,6 +127,34 @@ define(['swiper'], function(swp) {
 
   		});
   	},
+  
+    /**
+     * [activeSwiper 活动详情页swiper]
+     * @Author   shaojie.li
+     * @DateTime 2018-03-11
+     * @param    {[String]}   parentId    [父级ID名]
+     */
+    activeSwiper: function(parentId){
+      var itemLenGt1 = $(parentId).find('.swiper-slide').length > 1;
+      var $imgItem = $('.pagation-item');
+      var newSwp = new swp('.swiper-container', {
+        loop: true,
+        autoplay : false,
+        calculateHeight : true,
+        speed:600,
+        autoplayDisableOnInteraction: false,
+        onSlideChangeStart: function(swiper){
+          var index = swiper.activeLoopIndex;
+          $imgItem.eq(index).addClass('on').
+            siblings('li').removeClass('on');
+        }
+      });
+
+      $imgItem.on('click', function(){
+        var index = $(this).index();
+        newSwp.swipeTo(index);
+      });
+    },
 	
 		/**
 		 * [scrollTo 首页导航滚动]

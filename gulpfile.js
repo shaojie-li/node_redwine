@@ -4,7 +4,9 @@ var nodemon    = require('gulp-nodemon');
 var livereload = require('gulp-livereload');
 var sass 	   = require('gulp-sass');
 var rename 	   = require('gulp-rename');
-  
+var autoFx     = require('gulp-autoprefixer');
+var cssmin     = require('gulp-clean-css');
+
 // 一些文件的路径  
 var paths = {  
     client: {
@@ -28,11 +30,26 @@ var nodemonConfig = {
     }  
 };
 
+// 自动添加浏览器前缀
+gulp.task('autoFx', function () {
+    gulp.src(paths.client.style_path + '*.css')
+    .pipe(autoFx({
+        browsers: ['last 2 versions', 'Android >= 4.0','last 3 Explorer versions','last 3 Safari versions','Firefox >= 20','> 5%'],
+        cascade: true, //是否美化属性值 默认：true 像这样：
+        //-webkit-transform: rotate(45deg);
+        //        transform: rotate(45deg);
+        remove:true //是否去掉不必要的前缀 默认：true 
+    }))
+    .pipe(gulp.dest(paths.client.style_path));
+});
+
+
 // 配置sass任务
 gulp.task('sass', function () {
   return gulp.src('public/stylesheets/mobile_sass/main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(rename('m.main.min.css'))
+    .pipe(cssmin())
     .pipe(gulp.dest(paths.client.style_path));
 });
  
@@ -58,3 +75,7 @@ gulp.task('livereload', function() {
   
 // develop 任务， 同时开启 serve、livereload 任务  
 gulp.task('develop', ['sass:watch', 'serve']);  
+
+gulp.task('pub',function(){
+    gulp.run(['autoFx']);
+}); 
