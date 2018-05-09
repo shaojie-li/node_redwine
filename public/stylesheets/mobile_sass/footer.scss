@@ -6,14 +6,21 @@
     font-size: 14px;
     .g-logo{
         float: none;
+        text-align: center;
+        font-size: 12px;
+        color: #999;
         .logo-bd{
             @include bg-img-b(215px, 33px, '../images/logo_footer.png');
             background-size: contain;
             text-indent: -99999px;
             margin: 0 auto;
         }
+        a{
+            color: #999;
+            text-decoration: underline;
+        }
     }
-    .company_cpy{
-        margin-top: 50px;
+    .company_cpy {
+        padding: 6px 0;
     }
 }

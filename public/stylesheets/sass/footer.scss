@@ -4,6 +4,7 @@
     background-color: #000;
     color: #fff;
     font-size: 14px;
+    text-align: center;
     .g-logo{
         .logo-bd{
             @include bg-img-b(423px, 67px, '../images/logo_footer.png');
@@ -12,5 +13,9 @@
     }
     .company_cpy{
         margin-top: 50px;
+
+        a{
+            color: #fff;
+        }
     }
 }
