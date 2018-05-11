@@ -15,7 +15,7 @@ requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
 			$prodItem = $('.red-wine .prod-item'),
 			$activeItem = $('.active-wrap .item');
 
-  var mySwiper1 = new swp('.swiper-container', {
+	var mySwiper1 = new swp('.swiper-container', {
 		loop: true,
 		autoplay : 3000,
 		calculateHeight : true,
@@ -39,4 +39,6 @@ requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
 	c.noticeToggle('.notice-popup');
 	
 	c.dateFormatForHome();
+
+	c.submitMessage();
 });

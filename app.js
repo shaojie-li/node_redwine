@@ -19,10 +19,12 @@ var getbanner = require('./routes/getbanner');
 var deletebanner = require('./routes/deletebanner');
 var uploadactives = require('./routes/uploadactives');
 var getactives = require('./routes/getactives');
-var deleteactives = require('./routes/deleteactives');editactives
+var deleteactives = require('./routes/deleteactives');
 var editactives = require('./routes/editactives');
 var login = require('./routes/login');
 var proddetail = require('./routes/proddetail');
+var savemessage = require('./routes/savemessage');
+var getmessage = require('./routes/getmessage');
 
 var app = express();
 
@@ -56,6 +58,8 @@ app.use('/deleteactives', deleteactives);
 app.use('/editactives', editactives);
 app.use('/login', login);
 app.use('/product', proddetail);
+app.use('/savemessage', savemessage);
+app.use('/getmessage', getmessage);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

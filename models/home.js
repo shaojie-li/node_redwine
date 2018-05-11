@@ -157,6 +157,15 @@ var homeSchema = new Schema({
 			account: String,
 			pass: String
 		}
+	],
+	message: [
+		{
+			contacts: String,
+			tel: String,
+			email: String,
+			comments: String,
+			date: { type: Date, default: Date.now }
+		}
 	]
 }, {
     versionKey: false,
