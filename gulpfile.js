@@ -8,15 +8,14 @@ var autoFx     = require('gulp-autoprefixer');
 var cssmin     = require('gulp-clean-css');
 
 // 一些文件的路径  
-var paths = {  
-    client: {
-    	style_path: 'public/stylesheets/',
-    	sass_path: 'public/stylesheets/mobile_sass/',
-    	sass: 'public/stylesheets/mobile_sass/*.scss'
-    },  
-    server: {  
-        index: 'bin/www'  
-    }  
+var paths = {
+  client: {
+    style_path: "public/stylesheets/",
+    sass: "public/stylesheets/**/*.scss"
+  },
+  server: {
+    index: "bin/www"
+  }
 };  
   
 // nodemon 的配置  
@@ -52,9 +51,19 @@ gulp.task('sass', function () {
     .pipe(cssmin())
     .pipe(gulp.dest(paths.client.style_path));
 });
+
+// 配置PC端 sass任务
+gulp.task('sass_pc', function () {
+    return gulp
+      .src("public/stylesheets/sass/main.scss")
+      .pipe(sass().on("error", sass.logError))
+      .pipe(rename("main.min.css"))
+      .pipe(cssmin())
+        .pipe(gulp.dest(paths.client.style_path));
+});
  
 gulp.task('sass:watch', function () {
-  gulp.watch(paths.client.sass, ['sass']);
+    gulp.watch(paths.client.sass, ['sass', "sass_pc"]);
 });
   
 // 使用 nodemone 跑起服务器  
