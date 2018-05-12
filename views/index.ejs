@@ -181,42 +181,39 @@
             </div>
           </div>*/ %>
           <!-- E 公告 -->
-          <!-- S 招聘 -->
-          <%= /* 
-          <div class="recruit-home scrollItem">
-            <div class="recruit-box common-wrap">
-              <h3 class="common-title">招募精英</h3>
-              <div class="recruit-wrap">
-                <p class="recruit-tips">共有&nbsp;3&nbsp;个在招职位</p>
-                <div class="post-wrap">
-                  <div class="post-nav clear">
-                      <em class="t-name fl">职位：</em>
-                      <div class="post-tab fl clear">
-                        <span class="on">全部</span>
-                        <span>市场与销售</span>
-                        <span>职能</span>
-                      </div>
+          <!-- S 招聘 --> 
+          <% if(!!recruitment.length) { %>
+            <div class="recruit-home scrollItem">
+              <div class="recruit-box common-wrap">
+                <h3 class="common-title">招募精英</h3>
+                <div class="recruit-wrap">
+                  <p class="recruit-tips">共有&nbsp;<%= recruitment.length %>&nbsp;个在招职位</p>
+                  <div class="post-wrap">
+                    <%= /*
+                      <div class="post-nav clear">
+                        <em class="t-name fl">职位：</em>
+                        <div class="post-tab fl clear">
+                          <span class="on">全部</span>
+                          <span>市场与销售</span>
+                          <span>职能</span>
+                        </div>
+                      </div> */
+                    %>
+                    <div class="post-content">
+                      <ul>
+                        <% for(var i = 0;i < recruitment.length;i++){ %>
+                          <li>
+                            <a href="/recruitment/<%= recruitment[i].id %>" target="_blank"><%= recruitment[i].name %></a>
+                          </li>
+                        <% } %>
+                      </ul>
                     </div>
-                   
-                  <div class="post-content">
-                    <ul>
-                      <li>
-                        <a href="/recruitment" target="_blank">深圳大客户销售经理</a>
-                      </li>
-                      <li>
-                        <a href="/recruitment" target="_blank">深圳大客户销售经理</a>
-                      </li>
-                      <li>
-                        <a href="/recruitment" target="_blank">深圳大客户销售经理</a>
-                      </li>
-                    </ul>
                   </div>
                 </div>
               </div>
+              <img class="post-bg" src="/images/home/post_bg.jpg" alt="">
             </div>
-            <img class="post-bg" src="/images/home/post_bg.jpg" alt="">
-          </div>
-          */ %>
+          <% } %>
           <!-- E 招聘 -->
           <!-- S 联系我们 -->
           <div class="contact-us scrollItem">

@@ -146,12 +146,6 @@ var homeSchema = new Schema({
 			images: String
 		}
 	],
-	recruitments: [
-		{
-			title: String,
-			id: Number
-		}
-	],
 	user: [
 		{
 			account: String,
@@ -164,6 +158,14 @@ var homeSchema = new Schema({
 			tel: String,
 			email: String,
 			comments: String,
+			date: { type: Date, default: Date.now }
+		}
+	],
+	recruitment: [
+		{
+			name: String,
+			zhize: String,
+			zige: String,
 			date: { type: Date, default: Date.now }
 		}
 	]

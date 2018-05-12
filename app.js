@@ -25,6 +25,10 @@ var login = require('./routes/login');
 var proddetail = require('./routes/proddetail');
 var savemessage = require('./routes/savemessage');
 var getmessage = require('./routes/getmessage');
+var delmessage = require('./routes/delmessage');
+var uploadrecruitment = require('./routes/uploadrecruitment');
+var getrecruitment = require('./routes/getrecruitment');
+var delrecruitment = require('./routes/delrecruitment');
 
 var app = express();
 
@@ -60,6 +64,10 @@ app.use('/login', login);
 app.use('/product', proddetail);
 app.use('/savemessage', savemessage);
 app.use('/getmessage', getmessage);
+app.use('/delmessage', delmessage);
+app.use('/uploadrecruitment', uploadrecruitment);
+app.use('/getrecruitment', getrecruitment);
+app.use('/delrecruitment', delrecruitment);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
