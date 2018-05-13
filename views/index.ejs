@@ -85,36 +85,45 @@
           </div>
           <!-- E 精彩活动 -->
           <!-- S 公告 -->
-          <%= /*<div class="notice-home clear scrollItem">
+          <div class="notice-home clear scrollItem">
             <div class="img-wrap fl">
-              <img src="/images/home/notice_bg.jpg" alt="">
+              <% if (!isMobile) { %>
+                <img src="/images/home/notice_bg.jpg" alt="" />
+              <% } %>
             </div>
             <div class="notice-wrap fr">
-              <h3 class="notice-title">公告</h3>
-              <div class="notice-list">
-                <ul>
-                  <li>
-                    <a href="javascript:;" target="_blank" title="公告1">公告1</a>
-                  </li>
-                  <li>
-                    <a href="javascript:;" target="_blank" title="公告2公告2公告2公告2公告2公告2公告2">公告2公告2公告2公告2公告2公告2公告2</a>
-                  </li>
-                  <li>
-                    <a href="javascript:;" target="_blank" title="公告3公告3公告3公告3公告3">公告3公告3公告3公告3公告3</a>
-                  </li>
-                  <li>
-                    <a href="javascript:;" target="_blank" title="公告4">公告4</a>
-                  </li>
-                  <li>
-                    <a href="javascript:;" target="_blank" title="公告5">公告5</a>
-                  </li>
-                  <li>
-                    <a href="javascript:;" target="_blank" title="公告6">公告6</a>
-                  </li>
-                </ul>
-              </div>
-              <em class="notice-tag"></em>
-              <a href="javascript:;" target="_blank" class="view-all">查看全部精彩活动</a>
+              <h3 class="<%= isMobile ? 'common-title' :　'notice-title'　%>">公告</h3>
+              <% if(notices.length){ %>
+                <div class="notice-list">
+                  <ul>
+                    <li>
+                      <a href="javascript:;" target="_blank" title="公告1">公告1</a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" target="_blank" title="公告2公告2公告2公告2公告2公告2公告2">公告2公告2公告2公告2公告2公告2公告2</a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" target="_blank" title="公告3公告3公告3公告3公告3">公告3公告3公告3公告3公告3</a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" target="_blank" title="公告4">公告4</a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" target="_blank" title="公告5">公告5</a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" target="_blank" title="公告6">公告6</a>
+                    </li>
+                  </ul>
+                </div>
+                <a href="javascript:;" target="_blank" class="view-all">查看全部精彩活动</a>
+              <% } else { %>
+                <p>暂无公告</p>
+              <% } %>
+              <% if (!isMobile) { %>
+                <em class="notice-tag"></em>
+              <% } %>
+              
             </div>
             <!-- 公告弹框 -->
             <div class="notice-popup">
@@ -179,10 +188,9 @@
               <div class="mask"></div>
               <em class="close"></em>
             </div>
-          </div>*/ %>
+          </div>
           <!-- E 公告 -->
           <!-- S 招聘 --> 
-          <% if(!!recruitment.length) { %>
             <div class="recruit-home scrollItem">
               <div class="recruit-box common-wrap">
                 <h3 class="common-title">招募精英</h3>
@@ -200,20 +208,32 @@
                       </div> */
                     %>
                     <div class="post-content">
-                      <ul>
-                        <% for(var i = 0;i < recruitment.length;i++){ %>
-                          <li>
-                            <a href="/recruitment/<%= recruitment[i].id %>" target="_blank"><%= recruitment[i].name %></a>
-                          </li>
-                        <% } %>
-                      </ul>
+                      <% if(!!recruitment.length) { %>
+                        <ul>
+                          <% for(var i = 0;i < recruitment.length;i++){ %>
+                            <% if (!isMobile) { %>
+                              <li>
+                                <a href="/recruitment/<%= recruitment[i].id %>" target="_blank"><%= recruitment[i].name %></a>
+                              </li>
+                            <% } else{ %>
+                              <li>
+                                <a href="/recruitment/<%= recruitment[i].id %>"><%= recruitment[i].name %></a>
+                              </li>
+                            <% } %>
+                          <% } %>
+                        </ul>
+                      <% } else { %>
+                        暂未发布职位
+                      <% } %>
                     </div>
                   </div>
                 </div>
               </div>
-              <img class="post-bg" src="/images/home/post_bg.jpg" alt="">
+              <% if (!isMobile) { %>
+                <img class="post-bg" src="/images/home/post_bg.jpg" alt="">
+              <% } %>
             </div>
-          <% } %>
+          
           <!-- E 招聘 -->
           <!-- S 联系我们 -->
           <div class="contact-us scrollItem">
@@ -293,6 +313,11 @@
       <!-- S 公共尾部 -->
       <%-include("include/footer")%>
       <!-- E 公共尾部 -->
+      <!-- S 侧边栏 -->
+      <% if (!isMobile) { %>
+        <%-include("include/side")%>
+      <% } %>
+      <!-- E 侧边栏 -->
     </div>
   </body>
 </html>

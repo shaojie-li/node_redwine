@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 	let ua = req.headers['user-agent'].toLowerCase();  
 	let isMobile = ua.match(/(iphone|ipod|ipad|android)/) ? true : false;
 		
-	let navList = ['首页', '关于我们', '葡萄酒', '精彩活动', '联系我们'];
+	let navList = ['首页', '关于我们', '葡萄酒', '精彩活动', '公告', '招募精英', '联系我们'];
 
 	/* 美国、法国、意大利、其他 */
 	Home.find({}, function(err, home){

@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 	let ua = req.headers['user-agent'].toLowerCase();  
 	let isMobile = ua.match(/(iphone|ipod|ipad|android)/) ? true : false;
 
-	let navList = [];
+	let navList = ['首页', '葡萄酒', '精彩活动'];
 
 	let baseData = { title: '葡萄酒-列表', pageName: 'prodList', 'isMobile': isMobile, 'navList': navList};
 

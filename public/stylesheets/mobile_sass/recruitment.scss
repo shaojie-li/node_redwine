@@ -3,9 +3,7 @@
 .recruit-page{
     
     .recruit-content{
-        width: 80%;
-        max-width: 1240px;
-        min-width: 595px;
+        width: 90%;
         padding: 3% 0;
         margin: 0 auto;
     }
@@ -23,17 +21,26 @@
     }
 
     .post-disq, .post-duty{
-        width: 45%;
+        width: 100%;
         font-size: 14px;
         color: #333;
+        float: none;
         .post-tips{
             font-size: 14px;
             margin-bottom: 5px;
+            font-weight: bold;
         }
         ol{
             line-height: 36px;
             text-align: justify;
+            li{
+                padding-left: 20px;
+            }
         }
+    }
+
+    .post-duty {
+        margin-top: 20px;
     }
     
     .post-apply{

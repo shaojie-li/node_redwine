@@ -11,13 +11,13 @@ define([], function() {
 	    }
 
 	    $(navItem).on('click', function(){
-			var index = noFirst ? $(this).index() - 1 : $(this).index();
-			if(index < 0) return;
-			$('html, body').animate({
-				scrollTop: distance ? scrollArr[index] - distance : scrollArr[index]
-			}, 400, function(){
-				
-			})
+				var index = noFirst ? $(this).index() - 1 : $(this).index();
+				if(index < 0) return;
+				$('html, body').animate({
+					scrollTop: distance ? scrollArr[index] - distance : scrollArr[index]
+				}, 400, function(){
+					
+				})
 	    });
 	    $(document).on('scroll', function(){
 	    	if(hasShadow){

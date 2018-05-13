@@ -369,73 +369,80 @@ define(['swiper'], function(swp) {
     
     /* 日期格式话 xxxx-xx-xx */
     dateFormatForHome: function(){
-      var $listItem = $('.active-wrap li');
-      var $dateDom = $listItem.find('.pup-time em');
-      for(var i = 0;i < $listItem.length;i++){
-        
-        var curDate = $listItem.eq(i).find('.pup-time em').text(),
-            newDate = new Date(curDate),
-            dateStr = '';
-        var y = newDate.getFullYear(),
-            m = newDate.getMonth() + 1,
-            d = newDate.getDate();
-        m = m < 10 ? '0' + m : m;
-        d = d < 10 ? '0' + d : d;
-        dateStr = y + '-' + m + '-' + d
-        $listItem.eq(i).find('.pup-time em').text(dateStr);
-      }
-		},
-		
-		/* 首页表单提交 */ 
-		submitMessage: function(){
-			var $form = $("#messageForm");
-			var $submitMsg = $("#submitMsg");
-
-			var $contacts = $("#contacts");
-			var $tel = $("#tel");
-			var $email = $("#email");
-			var $comments = $("#comments");
-			var regTel = /^[1][3,4,5,7,8][0-9]{9}$/;
-			var regEmail = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
-			$submitMsg.click(function(){
-				if(!$contacts.val().trim() || !$tel.val().trim() || !$email.val().trim() || !$comments.val().trim()){
-					alert("请输入完整的留言内容");
-					return;
-				}
-				if(!regTel.test($tel.val())){
-					alert("请输入正确的手机号码");
-					return;
-				}
-				if(!regEmail.test($email.val())){
-					alert("请输入正确的邮箱地址");
-					return;
-				}
-				var params = {
-					contacts: $contacts.val().toString(),
-					tel: $tel.val().toString(),
-					email: $email.val().toString(),
-					comments: $comments.val().toString()
-				}
-
-				$.ajax({
-					url: "/savemessage",
-					method: "POST",
-					dataType: "text",
-					data: params,
-					success: function(data){
-						alert("留言成功");
-						$contacts.val("");
-						$tel.val("");
-						$email.val("");
-						$comments.val("");
-					},
-					error: function(err){
-						alert(err);
-					}
-				})
-			})
+		var $listItem = $('.active-wrap li');
+		var $dateDom = $listItem.find('.pup-time em');
+		for(var i = 0;i < $listItem.length;i++){
 			
+			var curDate = $listItem.eq(i).find('.pup-time em').text(),
+				newDate = new Date(curDate),
+				dateStr = '';
+			var y = newDate.getFullYear(),
+				m = newDate.getMonth() + 1,
+				d = newDate.getDate();
+			m = m < 10 ? '0' + m : m;
+			d = d < 10 ? '0' + d : d;
+			dateStr = y + '-' + m + '-' + d
+			$listItem.eq(i).find('.pup-time em').text(dateStr);
 		}
+	},
+		
+	/* 首页表单提交 */ 
+	submitMessage: function(){
+		var $form = $("#messageForm");
+		var $submitMsg = $("#submitMsg");
 
+		var $contacts = $("#contacts");
+		var $tel = $("#tel");
+		var $email = $("#email");
+		var $comments = $("#comments");
+		var regTel = /^[1][3,4,5,7,8][0-9]{9}$/;
+		var regEmail = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+		$submitMsg.click(function(){
+			if(!$contacts.val().trim() || !$tel.val().trim() || !$email.val().trim() || !$comments.val().trim()){
+				alert("请输入完整的留言内容");
+				return;
+			}
+			if(!regTel.test($tel.val())){
+				alert("请输入正确的手机号码");
+				return;
+			}
+			if(!regEmail.test($email.val())){
+				alert("请输入正确的邮箱地址");
+				return;
+			}
+			var params = {
+				contacts: $contacts.val().toString(),
+				tel: $tel.val().toString(),
+				email: $email.val().toString(),
+				comments: $comments.val().toString()
+			}
+
+			$.ajax({
+				url: "/savemessage",
+				method: "POST",
+				dataType: "text",
+				data: params,
+				success: function(data){
+					alert("留言成功");
+					$contacts.val("");
+					$tel.val("");
+					$email.val("");
+					$comments.val("");
+				},
+				error: function(err){
+					alert(err);
+				}
+			})
+		})
+	},
+
+	/* 返回顶部 */
+	backTop: function(ele){
+		$(ele).on('click', function(){
+			$('html, body').animate({
+				scrollTop:0
+			}, 400);
+		});
+	}
   }
 });

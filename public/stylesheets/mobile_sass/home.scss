@@ -252,9 +252,8 @@
 }
 
 .notice-home{
-    margin-top: 150px;
+    padding: 5% 0;
     height: auto;
-    background-color: #f2f8fa;
     .notice-tag{
         position: absolute;
         left: 26%;
@@ -273,9 +272,8 @@
     }
     .notice-wrap{
         position: relative;
-        width: 49.3%;
-        margin-left: 1.7%;
-        padding: 4% 0 0;
+        float: none;
+        padding: 0 20px; 
     }
     .notice-title{
         width: 55%;
@@ -286,7 +284,7 @@
         padding-bottom: 30px;
     }
     .notice-list{
-        width: 55%;
+        width: 100%;
         li{
             line-height: 30px;
             font-size: 14px;
@@ -299,16 +297,11 @@
     }
     .view-all{
         width: 60%;
-        margin: 5px 0 0 0;
+        margin: 20px auto 0;
         padding: 0 28px;
         border: 1px solid #ddd;
         color: #333;
-        &:after{
-            width: 102px;
-            height: 5px;
-            background-position: 0 -60px;
-            right: 28px;
-        }
+
         &:hover{
             background-color: #000;
             color: #fff;
@@ -323,8 +316,8 @@
     position: relative;
     padding: 5% 0;
     .post-wrap{
-        width: 50%;
-        margin-top: 35px;
+        width: 100%;
+        margin-top: 10px;
     }
     .post-nav{
         font-size: 14px;
@@ -346,7 +339,6 @@
         color: #333;
     }
     .post-content{
-        margin-top: 30px;
         li{
             position: relative;
             line-height: 45px;

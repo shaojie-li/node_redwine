@@ -41,7 +41,7 @@ requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
 	       //第i张图片加载完成
 	       flag++;
 	       // document.title = Math.round(flag/newArray.length*100) + '%';
-	       if( flag == newArray.length ){
+	       if(flag == newArray.length){
 	          //全部加载完成
 	          c.scrollTo('.g-nav li','.scrollItem', true, headerHeight, true);
 	       }
@@ -53,4 +53,6 @@ requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
 	c.dateFormatForHome();
 
 	c.extMenu('.home-page');
+
+	c.submitMessage();
 });

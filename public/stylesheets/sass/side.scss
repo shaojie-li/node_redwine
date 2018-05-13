@@ -1,0 +1,45 @@
+.side_nav {
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+    z-index: 99999;
+
+    li{
+        width: 56px;
+        height: 56px;
+        background: url(../images/home/side_spirit.png) no-repeat;
+        margin-bottom: 8px;
+        cursor: pointer;
+
+        a{
+            display: block;
+            height: 100%;
+            text-indent: -999999px;
+            overflow: hidden;
+        }
+
+        &.wine {
+            background-position: -11px 0;
+
+            &:hover {
+                background-position: -86px 0;
+            }
+        }
+
+        &.active {
+            background-position: -11px -65px;
+
+            &:hover {
+                background-position: -86px -65px;
+            }
+        }
+
+        &.top {
+            background-position: -11px -129px;
+
+            &:hover {
+                background-position: -86px -129px;
+            }
+        }
+    }
+}

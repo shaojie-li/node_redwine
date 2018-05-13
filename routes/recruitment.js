@@ -14,8 +14,8 @@ router.get('/:id', function(req, res, next) {
 		let baseData = { 
 			title: '招聘详情', 
 			pageName: 'recruitment', 
-			'isMobile': isMobile, 
-			'navList': navList
+			isMobile: isMobile, 
+			navList: navList
 		}, dbData = home[0]._doc.recruitment, data = {};
 
 		baseData.recruitment = null;

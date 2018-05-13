@@ -170,12 +170,12 @@ define(['swiper'], function(swp) {
 	    var ctns = $(items), scrollArr = [], scrTop = $('html, body').scrollTop(), $navItem = $(navItem);
 	    if(hasShadow){
 	    	if(scrTop !== 0){
-				$navItem.parents('.g-header').addClass('hasShadow');
+					$navItem.parents('.g-header').addClass('hasShadow');
 	    	}
 	    }
 	    for(var i = 0;i < ctns.length;i++){
 				scrollArr.push($(ctns[i]).offset().top);
-		  }
+			}
 		  $navItem.on('click', function(){
 				var index = noFirst ? $(this).index() - 1 : $(this).index();
 				if(index < 0) return;
@@ -304,6 +304,56 @@ define(['swiper'], function(swp) {
       $extBtn.on('click', function(){
         $('.filter-class').toggle('fast');
       });
-    }
+		},
+		
+		/* 首页表单提交 */ 
+	submitMessage: function(){
+			var $form = $("#messageForm");
+			var $submitMsg = $("#submitMsg");
+
+			var $contacts = $("#contacts");
+			var $tel = $("#tel");
+			var $email = $("#email");
+			var $comments = $("#comments");
+			var regTel = /^[1][3,4,5,7,8][0-9]{9}$/;
+			var regEmail = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+			$submitMsg.click(function(){
+				if(!$contacts.val().trim() || !$tel.val().trim() || !$email.val().trim() || !$comments.val().trim()){
+					alert("请输入完整的留言内容");
+					return;
+				}
+				if(!regTel.test($tel.val())){
+					alert("请输入正确的手机号码");
+					return;
+				}
+				if(!regEmail.test($email.val())){
+					alert("请输入正确的邮箱地址");
+					return;
+				}
+				var params = {
+					contacts: $contacts.val().toString(),
+					tel: $tel.val().toString(),
+					email: $email.val().toString(),
+					comments: $comments.val().toString()
+				}
+
+				$.ajax({
+					url: "/savemessage",
+					method: "POST",
+					dataType: "text",
+					data: params,
+					success: function(data){
+						alert("留言成功");
+						$contacts.val("");
+						$tel.val("");
+						$email.val("");
+						$comments.val("");
+					},
+					error: function(err){
+						alert(err);
+					}
+				})
+			})
+		}
   }
 });

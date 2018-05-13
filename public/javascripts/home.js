@@ -41,4 +41,6 @@ requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
 	c.dateFormatForHome();
 
 	c.submitMessage();
+
+	c.backTop('.side_nav .top');
 });

@@ -28,11 +28,15 @@
         color: #333;
         .post-tips{
             font-size: 14px;
+            font-weight: bold;
             margin-bottom: 5px;
         }
         ol{
             line-height: 36px;
             text-align: justify;
+            li{
+                padding-left: 20px;
+            }
         }
     }
     
