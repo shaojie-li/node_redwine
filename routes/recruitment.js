@@ -23,8 +23,8 @@ router.get('/:id', function(req, res, next) {
 		for (let i = 0;i < dbData.length;i++) {
 			if(dbData[i]._id == req.params.id) {
 				baseData.recruitment = dbData[i];
-				baseData.recruitment.zhize = baseData.recruitment.zhize.replace("\n", "<br />");
-				baseData.recruitment.zige = baseData.recruitment.zige.replace("\n", "<br />");
+				baseData.recruitment.zhize = baseData.recruitment.zhize.replace(/\n/g, "<br />");
+				baseData.recruitment.zige = baseData.recruitment.zige.replace(/\n/g, "<br />");
 			}
 		};
 
