@@ -96,24 +96,11 @@
               <% if(notices.length){ %>
                 <div class="notice-list">
                   <ul>
-                    <li>
-                      <a href="javascript:;" target="_blank" title="公告1">公告1</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;" target="_blank" title="公告2公告2公告2公告2公告2公告2公告2">公告2公告2公告2公告2公告2公告2公告2</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;" target="_blank" title="公告3公告3公告3公告3公告3">公告3公告3公告3公告3公告3</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;" target="_blank" title="公告4">公告4</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;" target="_blank" title="公告5">公告5</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;" target="_blank" title="公告6">公告6</a>
-                    </li>
+                    <% for(var i = 0;i < Math.min(notices.length, 6);i++){ %>
+                      <li>
+                        <a href="javascript:;" target="_blank" title="<%= notices[i].title %>"><%= notices[i].title %></a>
+                      </li>
+                    <% } %>
                   </ul>
                 </div>
                 <a href="javascript:;" target="_blank" class="view-all">查看全部精彩活动</a>
@@ -132,54 +119,19 @@
                   <div class="cell-content">
                     <div class="content">
                       <ul>
-                        <li class="pop-list-item">
-                          <div class="nav clear">
-                            <span class="nav-title">公告</span>
-                            <em class="nav-icon"></em>
-                          </div>
-                          <div class="ctn-wrap">
-                            <div class="ctn">
-                              <p class="ctn-text">公告详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情</p>
-                              <ul class="ctn-img">
-                                <li>
-                                  <img src="https://dummyimage.com/600x400/000/fff" alt="">
-                                </li>
-                              </ul>
+                        <% for(var i = 0;i < notices.length;i++){ %>
+                          <li class="pop-list-item">
+                            <div class="nav clear">
+                              <span class="nav-title"><%= notices[i].title %></span>
+                              <em class="nav-icon"></em>
                             </div>
-                          </div>
-                        </li>
-                        <li class="pop-list-item">
-                          <div class="nav clear">
-                            <span class="nav-title">公告</span>
-                            <em class="nav-icon"></em>
-                          </div>
-                          <div class="ctn-wrap">
-                            <div class="ctn">
-                              <p class="ctn-text">公告详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情</p>
-                              <ul class="ctn-img">
-                                <li>
-                                  <img src="https://dummyimage.com/600x400/000/fff" alt="">
-                                </li>
-                              </ul>
+                            <div class="ctn-wrap">
+                              <div class="ctn">
+                                <p class="ctn-text"><%- notices[i].content %></p>
+                              </div>
                             </div>
-                          </div>
-                        </li>
-                        <li class="pop-list-item">
-                          <div class="nav clear">
-                            <span class="nav-title">公告</span>
-                            <em class="nav-icon"></em>
-                          </div>
-                          <div class="ctn-wrap">
-                            <div class="ctn">
-                              <p class="ctn-text">公告详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情</p>
-                              <ul class="ctn-img">
-                                <li>
-                                  <img src="https://dummyimage.com/600x400/000/fff" alt="">
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
+                          </li>
+                        <% } %>
                       </ul>
                     </div>
                   </div>

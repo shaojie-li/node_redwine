@@ -13,7 +13,7 @@ router.all('*', function(req, res, next) {
   next();  
 });
 	
-/* 添加职位 */
+/* 添加公告 */
 router.post('/', function(req, res, next) {
 
 	let loadData = Object.assign({}, req.body);
@@ -21,7 +21,7 @@ router.post('/', function(req, res, next) {
 	
 	Home.findById('59f72895ca8e128c96492698', function(err, docs){
         if(err) return handleError(err);
-		docs.recruitment.unshift(loadData);
+		docs.notices.unshift(loadData);
 		docs.save(function(err){
 		    res.send('success');
 		    return;

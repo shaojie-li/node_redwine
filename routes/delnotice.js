@@ -3,7 +3,6 @@ let router = express.Router();
 let http = require('http');
 let mongoose = require('mongoose');
 let Home = require('../models/home');
-let config = new require('../config');
 
 router.all('*', function(req, res, next) {  
   res.header("Access-Control-Allow-Origin", "*");  
@@ -13,19 +12,31 @@ router.all('*', function(req, res, next) {
   next();  
 });
 	
-/* 添加职位 */
+/* 删除公告 */
 router.post('/', function(req, res, next) {
 
 	let loadData = Object.assign({}, req.body);
-	let baseUrl = req.headers.host || '';
-	
-	Home.findById('59f72895ca8e128c96492698', function(err, docs){
-        if(err) return handleError(err);
-		docs.recruitment.unshift(loadData);
+	let reqId = loadData.id;
+
+	Home.findById('59f72895ca8e128c96492698')
+	.exec(function(err, docs){
+
+		if(err) return handleError(err);
+
+		docs.notices.map(function(v, i) {
+			
+			if(v._id == reqId){
+                docs.notices.splice(i, 1);	
+			}
+
+		});
+
 		docs.save(function(err){
-		    res.send('success');
-		    return;
-		}); 
+			if(err) return handleError(err);
+	        res.send('success');
+	        return;
+	    });
+
 	});
 
 });

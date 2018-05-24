@@ -143,7 +143,7 @@ var homeSchema = new Schema({
 		{
 			title: String,
 			content: String,
-			images: String
+			date: { type: Date, default: Date.now }
 		}
 	],
 	user: [
