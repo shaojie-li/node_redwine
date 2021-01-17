@@ -1,6 +1,6 @@
-@import './mixin.scss';
-@import './popup.scss';
-.view-all{
+@import "./mixin.scss";
+@import "./popup.scss";
+.view-all {
     position: relative;
     display: block;
     width: 199px;
@@ -11,8 +11,8 @@
     border-bottom: 1px solid #f2f8fa;
     font-size: 14px;
     color: #666;
-    &:after{
-        content: '';
+    &:after {
+        content: "";
         position: absolute;
         right: 12px;
         top: 16px;
@@ -23,38 +23,38 @@
     }
 }
 
-.g-home-carousel{
+.g-home-carousel {
     position: relative;
     width: 100%;
     margin: 59px auto 0;
-    .carousel-wrap{
+    .carousel-wrap {
         width: 100%;
-        li{
+        li {
             float: left;
             width: 100%;
-            img{
+            img {
                 width: 100%;
                 max-height: 674px;
                 overflow: hidden;
             }
         }
     }
-    .winedemo{
+    .winedemo {
         position: absolute;
         right: 20px;
         bottom: -30%;
         width: 14%;
         z-index: 10;
-        img{
+        img {
             width: 96%;
         }
     }
 }
 
-.company-info{
+.company-info {
     margin-top: 56px;
-    .info-wrapper{
-        p{
+    .info-wrapper {
+        p {
             font-size: 14px;
             color: #333;
             line-height: 30px;
@@ -62,70 +62,71 @@
             text-align: justify;
         }
     }
-    .info-en{
+    .info-en {
         margin-top: 30px;
     }
 }
 
-.red-wine{
+.red-wine {
     margin-top: 40px;
-    .prod-info{
+    .prod-info {
         width: 100%;
         font-size: 14px;
         line-height: 18px;
         color: #333;
         margin-top: 8px;
         text-align: center;
-        .intros{
-            span{
+        .intros {
+            span {
                 display: block;
                 font-weight: bold;
                 font-size: 16px;
                 margin-bottom: 10px;
             }
-            i{
+            i {
                 display: block;
                 height: 8px;
             }
         }
     }
-    .prod-item{
+    .prod-item {
         padding-bottom: 20px;
     }
-    .pagation-home{
+    .pagation-home {
         width: 280px;
         margin: 10px auto 0;
-        .pagation-box{
+        .pagation-box {
             text-align: center;
             color: #000;
             font-weight: bold;
-            li{
+            li {
                 display: inline-block;
                 cursor: pointer;
                 font-size: 12px;
-                &.on{
-                    em{
+                &.on {
+                    em {
                         width: 11px;
                         height: 11px;
                         margin: 0 6px 0 10px;
                         background-position: 0 0;
                     }
-                    i{
+                    i {
                         width: 62px;
                     }
                 }
             }
-            span,em{
+            span,
+            em {
                 float: left;
-            } 
-            em{
+            }
+            em {
                 width: 5px;
                 height: 5px;
                 margin: -8px 6px 0 12px;
                 background: url(../images/home/home_spirit.png) no-repeat;
                 background-position: -3px -16px;
             }
-            i{
+            i {
                 float: right;
                 width: 36px;
                 height: 1px;
@@ -135,29 +136,29 @@
             }
         }
     }
-    .prod-img{
+    .prod-img {
         position: relative;
         width: 100%;
-        .img-wrap{
+        .img-wrap {
             position: relative;
             width: 100%;
-            .img-box{
+            .img-box {
                 position: relative;
                 width: 100%;
             }
-            .item-list{
+            .item-list {
                 position: relative;
                 float: left;
                 width: 100%;
-                a{
+                a {
                     display: block;
                 }
             }
         }
-        img{
+        img {
             width: 100%;
         }
-        .img-text{
+        .img-text {
             position: absolute;
             left: -10px;
             top: -12px;
@@ -168,32 +169,32 @@
             font-size: 28px;
             color: #000;
             z-index: 10;
-            background-color: rgba(255,255,255,.9);
+            background-color: rgba(255, 255, 255, 0.9);
         }
     }
 }
 
-.active-home{
+.active-home {
     margin-top: 40px;
-    .active-wrap{
+    .active-wrap {
         position: relative;
-        .item{
+        .item {
             width: 48%;
             overflow: hidden;
             float: left;
             margin-bottom: 3%;
-            &:nth-child(even){
+            &:nth-child(even) {
                 float: right;
             }
-            .item-wrap{
+            .item-wrap {
                 position: relative;
                 overflow: hidden;
             }
-            img{
+            img {
                 width: 100%;
                 height: auto;
             }
-            .active-text{
+            .active-text {
                 position: relative;
                 height: 22px;
                 line-height: 22px;
@@ -205,7 +206,7 @@
                 font-size: 12px;
                 @include textdeal(1);
             }
-            .active-title{
+            .active-title {
                 position: absolute;
                 left: 0;
                 top: 100%;
@@ -215,31 +216,32 @@
                 line-height: 18px;
                 background-color: #fff;
                 transition: all 260ms;
-                .wrap{
+                .wrap {
                     position: relative;
-                    &:after{
-                        content: '';
+                    &:after {
+                        content: "";
                         position: absolute;
                         right: -12px;
                         bottom: -5px;
                         width: 22px;
                         height: 22px;
-                        background: url(../images/home/home_spirit.png) no-repeat;
+                        background: url(../images/home/home_spirit.png)
+                            no-repeat;
                         background-position: 0 -30px;
                     }
                 }
-                p{
+                p {
                     height: 36px;
                     @include textdeal(2);
                 }
             }
-            .icon-arrow{
+            .icon-arrow {
                 position: absolute;
                 right: 0;
                 top: 0;
                 z-index: 30;
-                &:after{
-                    content: '';
+                &:after {
+                    content: "";
                     display: inline-block;
                     width: 4px;
                     height: 30px;
@@ -251,10 +253,10 @@
     }
 }
 
-.notice-home{
+.notice-home {
     padding: 5% 0;
     height: auto;
-    .notice-tag{
+    .notice-tag {
         position: absolute;
         left: 26%;
         top: -100px;
@@ -262,20 +264,20 @@
         height: 212px;
         background: url(../images/home/notice_tag.png) no-repeat;
     }
-    .img-wrap{
+    .img-wrap {
         width: 49%;
-        img{
+        img {
             width: 100%;
             height: auto;
             min-height: 390px;
         }
     }
-    .notice-wrap{
+    .notice-wrap {
         position: relative;
         float: none;
-        padding: 0 20px; 
+        padding: 0 20px;
     }
-    .notice-title{
+    .notice-title {
         width: 55%;
         border-bottom: 1px solid #333;
         font-size: 48px;
@@ -283,94 +285,94 @@
         margin-bottom: 20px;
         padding-bottom: 30px;
     }
-    .notice-list{
+    .notice-list {
         width: 100%;
-        li{
+        li {
             line-height: 30px;
             font-size: 14px;
             @include textdeal(1);
-            a{
+            a {
                 display: block;
                 color: #333;
             }
         }
     }
-    .view-all{
+    .view-all {
         width: 60%;
         margin: 20px auto 0;
         padding: 0 28px;
         border: 1px solid #ddd;
         color: #333;
 
-        &:hover{
+        &:hover {
             background-color: #000;
             color: #fff;
-            &:after{
+            &:after {
                 background-position: 0 -72px;
             }
         }
     }
 }
 
-.recruit-home{
+.recruit-home {
     position: relative;
     padding: 5% 0;
-    .post-wrap{
+    .post-wrap {
         width: 100%;
         margin-top: 10px;
     }
-    .post-nav{
+    .post-nav {
         font-size: 14px;
         color: #333;
     }
-    .post-tab{
-        span{
+    .post-tab {
+        span {
             float: left;
             padding: 0 4px 10px;
             margin: 0 6px;
             cursor: pointer;
-            &.on{
+            &.on {
                 border-bottom: 2px solid #333;
             }
         }
     }
-    .recruit-tips{
+    .recruit-tips {
         font-size: 18px;
         color: #333;
     }
-    .post-content{
-        li{
+    .post-content {
+        li {
             position: relative;
             line-height: 45px;
             font-size: 14px;
             border-bottom: 1px solid #ddd;
-            &:after{
-                content: '';
+            &:after {
+                content: "";
                 position: absolute;
                 right: 16px;
-                top: 50%;   
+                top: 50%;
                 width: 102px;
-                height: 5px; 
+                height: 5px;
                 margin-top: -2px;
-                background: url(../images/home/home_spirit.png)  0 -60px no-repeat;
+                background: url(../images/home/home_spirit.png) 0 -60px no-repeat;
             }
-            &:hover{
+            &:hover {
                 background-color: #333;
-                &:after{
+                &:after {
                     background-position: 0 -72px;
                 }
-                a{
+                a {
                     color: #fff;
                 }
             }
-            a{
+            a {
                 display: block;
                 padding: 0 16px;
                 color: #333;
             }
         }
     }
-    .post-bg{
+    .post-bg {
         position: absolute;
         right: 0;
         top: 43%;
@@ -379,18 +381,18 @@
     }
 }
 
-.contact-us{
+.contact-us {
     margin-top: 40px;
     padding: 30px 0 20px;
     background: #3d3d3d;
-    .contact-title{
+    .contact-title {
         position: relative;
         margin-bottom: 36px;
         font-size: 24px;
         color: #eee;
         text-align: center;
-        &:after{
-            content: ' ';
+        &:after {
+            content: " ";
             position: absolute;
             left: 50%;
             bottom: -16px;
@@ -400,19 +402,20 @@
             background-color: #fff;
         }
     }
-    .info-us{
+    .info-us {
         float: none;
         width: 100%;
-        dl{
+        dl {
             position: relative;
             color: #eee;
             font-size: 14px;
             margin-bottom: 30px;
         }
-        dt,dd{
+        dt,
+        dd {
             line-height: 36px;
         }
-        dt{
+        dt {
             position: absolute;
             left: 0;
             top: 0;
@@ -421,47 +424,47 @@
             font-size: 14px;
             font-weight: bold;
         }
-        dd{
+        dd {
             width: 100%;
             padding-left: 71px;
             box-sizing: border-box;
             text-align: justify;
-            .bd-map{
+            .bd-map {
                 position: relative;
                 display: block;
                 background-color: #fff;
                 padding: 0 20px 0 25px;
                 margin-top: 5px;
-                &:after{
-                    content: '';
+                &:after {
+                    content: "";
                     position: absolute;
                     right: 20px;
-                    top: 50%;   
+                    top: 50%;
                     width: 102px;
                     height: 5px;
                     margin-top: -2px;
-                    background: url(../images/home/home_spirit.png)  0 -60px no-repeat;
+                    background: url(../images/home/home_spirit.png) 0 -60px no-repeat;
                 }
             }
         }
     }
-    .contact-message{
+    .contact-message {
         float: none;
         width: 100%;
-        .msg-title{
+        .msg-title {
             font-size: 18px;
             color: #eee;
             font-weight: bold;
             line-height: 30px;
             margin-bottom: 25px;
         }
-        dl{
+        dl {
             position: relative;
             color: #eee;
             font-size: 14px;
             margin-bottom: 12px;
         }
-        dt{
+        dt {
             position: absolute;
             left: 0;
             top: 50%;
@@ -472,12 +475,15 @@
             -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
         }
-        dd{
+        dd {
             width: 100%;
             padding-left: 71px;
             box-sizing: border-box;
             text-align: justify;
-            input, textarea, button, a{
+            input,
+            textarea,
+            button,
+            a {
                 width: 100%;
                 padding: 11px 8px;
                 font-size: 14px;
@@ -485,20 +491,20 @@
                 border: none;
                 border-radius: 3px;
                 background-color: #fff;
-                font-family: 'Microsoft YaHei';
+                font-family: "Microsoft YaHei";
             }
-            input{
+            input {
                 width: 95%;
                 height: 14px;
                 line-height: 14px;
             }
-            textarea{
+            textarea {
                 width: 95%;
                 height: 88px;
                 line-height: 18px;
                 resize: none;
             }
-            a{
+            a {
                 width: 100%;
                 display: block;
                 height: 36px;

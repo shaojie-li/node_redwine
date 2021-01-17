@@ -1,21 +1,21 @@
-@import './mixin.scss';
-.common-footer{
+@import "./mixin.scss";
+.common-footer {
     padding: 15px 0 10px;
     background-color: #000;
     color: #fff;
     font-size: 14px;
-    .g-logo{
+    .g-logo {
         float: none;
         text-align: center;
         font-size: 12px;
         color: #999;
-        .logo-bd{
-            @include bg-img-b(215px, 33px, '../images/logo_footer.png');
+        .logo-bd {
+            @include bg-img-b(215px, 33px, "../images/logo_footer.png");
             background-size: contain;
             text-indent: -99999px;
             margin: 0 auto;
         }
-        a{
+        a {
             color: #999;
             text-decoration: underline;
         }

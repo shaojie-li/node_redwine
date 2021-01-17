@@ -1,22 +1,22 @@
-@import './mixin.scss';
-.common-footer{
+@import "./mixin.scss";
+.common-footer {
     padding: 30px 90px 25px 72px;
     background-color: #000;
     color: #fff;
     font-size: 14px;
     text-align: center;
-    .g-logo{
-        .logo-bd{
-            @include bg-img-b(423px, 67px, '../images/logo_footer.png');
+    .g-logo {
+        .logo-bd {
+            @include bg-img-b(423px, 67px, "../images/logo_footer.png");
             text-indent: -99999px;
         }
     }
-    .company_cpy{
+    .company_cpy {
         margin-top: 50px;
 
-        a{
+        a {
             color: #fff;
-            margin-left:20px;
+            margin-left: 20px;
             text-decoration: underline;
         }
     }

@@ -68,7 +68,7 @@ gulp.task('sass:watch', function () {
   
 // 使用 nodemone 跑起服务器  
 gulp.task('serve', ['livereload'], function() {  
-    return nodemon(nodemonConfig);  
+  //  return nodemon(nodemonConfig);  
 }); 
   
   

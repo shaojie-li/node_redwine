@@ -1,121 +1,120 @@
-@import './mixin.scss';
+@import "./mixin.scss";
 
-.active-page{
-
-	.active-banner{
-		img{
-			width: 100%;
-			height: auto;
-		}
-	}
-
-	.active-content{
-		width: 53%;
-		margin: 5% auto 0;
-	}
-
-	.active-wrap{
-    position: relative;
-    ul{
-    	margin-right: -1%;
-    }
-    .item{
-        float: left;
-        width: 31%;
-        margin-right: 2%;
-        margin-bottom: 2%;
-        cursor: pointer;
-        overflow: hidden;
-        .item-wrap{
-            position: relative;
-            overflow: hidden;
-        }
-        img{
+.active-page {
+    .active-banner {
+        img {
             width: 100%;
             height: auto;
         }
-        &.item-1{
-            left: 3.6%;
+    }
+
+    .active-content {
+        width: 53%;
+        margin: 5% auto 0;
+    }
+
+    .active-wrap {
+        position: relative;
+        ul {
+            margin-right: -1%;
         }
-        &.item-2{
-            left: 36%;
-            margin-top: 12%;
-        }
-        &.item-3{
-            right: 4.5%;
-            margin-top: 8%;
-        }
-        &.item-4{
-            left: 3%;
-            margin-top: 39%;
-        }
-        &.item-5{
-            left: 36%;
-            margin-top: 50%;
-        }
-        &.item-6{
-            right: 5%;
-            margin-top: 46%;
-        }
-        &:hover{
-            .active-title{
-                margin-top: -79px;
-            }
-        }
-        .active-text{
-            position: relative;
-            height: 22px;
-            line-height: 22px;
-            z-index: 20;
-            background-color: #fff;
-            padding: 0 10px;
+        .item {
+            float: left;
+            width: 31%;
+            margin-right: 2%;
+            margin-bottom: 2%;
+            cursor: pointer;
             overflow: hidden;
-            @include textdeal(1);
-        }
-        .active-title{
-            position: absolute;
-            left: 0;
-            top: 100%;
-            width: 100%;
-            z-index: 10;
-            padding: 10px 10px 15px;
-            line-height: 18px;
-            background-color: #fff;
-            transition: all 260ms;
-            .wrap{
+            .item-wrap {
                 position: relative;
-                &:after{
-                    content: '';
-                    position: absolute;
-                    right: -12px;
-                    bottom: -5px;
-                    width: 22px;
-                    height: 22px;
-                    background: url(../images/home/home_spirit.png) no-repeat;
-                    background-position: 0 -30px;
+                overflow: hidden;
+            }
+            img {
+                width: 100%;
+                height: auto;
+            }
+            &.item-1 {
+                left: 3.6%;
+            }
+            &.item-2 {
+                left: 36%;
+                margin-top: 12%;
+            }
+            &.item-3 {
+                right: 4.5%;
+                margin-top: 8%;
+            }
+            &.item-4 {
+                left: 3%;
+                margin-top: 39%;
+            }
+            &.item-5 {
+                left: 36%;
+                margin-top: 50%;
+            }
+            &.item-6 {
+                right: 5%;
+                margin-top: 46%;
+            }
+            &:hover {
+                .active-title {
+                    margin-top: -79px;
                 }
             }
-            p{
-                height: 36px;
-                @include textdeal(2);
+            .active-text {
+                position: relative;
+                height: 22px;
+                line-height: 22px;
+                z-index: 20;
+                background-color: #fff;
+                padding: 0 10px;
+                overflow: hidden;
+                @include textdeal(1);
             }
-        }
-        .icon-arrow{
-            position: relative;
-            display: block;
-            text-align: right;
-            z-index: 30;
-            margin-top: -8px;
-            &:after{
-                content: '';
-                display: inline-block;
-                width: 4px;
-                height: 36px;
-                background: url(../images/home/home_spirit.png) no-repeat;
-                background-position: -30px -16px;
+            .active-title {
+                position: absolute;
+                left: 0;
+                top: 100%;
+                width: 100%;
+                z-index: 10;
+                padding: 10px 10px 15px;
+                line-height: 18px;
+                background-color: #fff;
+                transition: all 260ms;
+                .wrap {
+                    position: relative;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        right: -12px;
+                        bottom: -5px;
+                        width: 22px;
+                        height: 22px;
+                        background: url(../images/home/home_spirit.png)
+                            no-repeat;
+                        background-position: 0 -30px;
+                    }
+                }
+                p {
+                    height: 36px;
+                    @include textdeal(2);
+                }
+            }
+            .icon-arrow {
+                position: relative;
+                display: block;
+                text-align: right;
+                z-index: 30;
+                margin-top: -8px;
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    width: 4px;
+                    height: 36px;
+                    background: url(../images/home/home_spirit.png) no-repeat;
+                    background-position: -30px -16px;
+                }
             }
         }
     }
-	}
-
 }

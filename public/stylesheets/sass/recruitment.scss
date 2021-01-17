@@ -1,53 +1,53 @@
-@import './mixin.scss';
+@import "./mixin.scss";
 
-.recruit-page{
-    
-    .recruit-content{
+.recruit-page {
+    .recruit-content {
         width: 80%;
         max-width: 1240px;
         min-width: 595px;
         padding: 3% 0;
         margin: 0 auto;
     }
-    
-    .post-title{
+
+    .post-title {
         font-size: 24px;
         color: #333;
         padding-bottom: 20px;
         border-bottom: 1px solid #ccc;
     }
-    
-    .post-detail{
+
+    .post-detail {
         padding: 30px 0 40px;
         border-bottom: 1px solid #ccc;
     }
 
-    .post-disq, .post-duty{
+    .post-disq,
+    .post-duty {
         width: 45%;
         font-size: 14px;
         color: #333;
-        .post-tips{
+        .post-tips {
             font-size: 14px;
             font-weight: bold;
             margin-bottom: 5px;
         }
-        ol{
+        ol {
             line-height: 36px;
             text-align: justify;
-            li{
+            li {
                 padding-left: 20px;
             }
         }
     }
-    
-    .post-apply{
+
+    .post-apply {
         margin-top: 5%;
-        .apply-title{
+        .apply-title {
             font-size: 18px;
             color: #333;
             font-weight: bold;
         }
-        .apply-submit{
+        .apply-submit {
             display: block;
             width: 30%;
             height: 40px;
@@ -61,29 +61,31 @@
             text-align: center;
         }
     }
-    
-    .apply-intro, .apply-list{
+
+    .apply-intro,
+    .apply-list {
         width: 45%;
     }
 
-    .apply-content{
+    .apply-content {
         margin-top: 3%;
         font-size: 14px;
         color: #333;
-        .apply-list{
-            ul{
+        .apply-list {
+            ul {
                 margin-top: -6%;
             }
-            li{
+            li {
                 line-height: 40px;
                 margin-top: 6%;
-                label,input{
+                label,
+                input {
                     float: left;
                 }
-                label{
+                label {
                     width: 74px;
                 }
-                input{
+                input {
                     width: 63%;
                     height: 18px;
                     padding: 10px;
@@ -93,14 +95,14 @@
                 }
             }
         }
-        .apply-intro{
-            label{
+        .apply-intro {
+            label {
                 width: 74px;
                 height: 40px;
                 line-height: 40px;
                 float: left;
             }
-            textarea{
+            textarea {
                 float: left;
                 width: 63%;
                 height: 18px;
@@ -113,5 +115,4 @@
             }
         }
     }
-
 }

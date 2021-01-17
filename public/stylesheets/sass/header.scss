@@ -1,6 +1,6 @@
-@import './mixin.scss';
+@import "./mixin.scss";
 
-.g-header{
+.g-header {
     position: fixed;
     left: 0;
     top: 0;
@@ -9,7 +9,7 @@
     padding: 37px 87px 33px 73px;
     line-height: 66px;
     background-color: #fff;
-    .g-logo{
+    .g-logo {
         width: 41%;
         img {
             width: 100%;
@@ -17,20 +17,20 @@
             max-width: 425px;
         }
     }
-    &.hasShadow{
-        box-shadow: 5px 5px 10px rgba(0,0,0,.3);
+    &.hasShadow {
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     }
-    .g-nav{
-        ul{
+    .g-nav {
+        ul {
             font-size: 0;
         }
-        li{
+        li {
             display: inline-block;
             margin-left: 45px;
             font-size: 18px;
             color: #000;
-            &:hover{
-                a{
+            &:hover {
+                a {
                     color: #f90;
                 }
             }
@@ -38,8 +38,8 @@
     }
 }
 
-.static-wrapper{
-  .g-header{
-    position: static;
-  }
+.static-wrapper {
+    .g-header {
+        position: static;
+    }
 }
