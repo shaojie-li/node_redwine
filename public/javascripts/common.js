@@ -443,6 +443,10 @@ define(['swiper'], function(swp) {
 				scrollTop:0
 			}, 400);
 		});
+	},
+
+	lazyload: function(){
+		$("img.lazyload").lazyload({effect: "fadeIn"});
 	}
   }
 });

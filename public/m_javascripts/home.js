@@ -47,6 +47,8 @@ requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
 	    }
 	}
 
+	c.lazyload()
+
 	c.noticeToggle('.notice-popup');
 	
 	c.dateFormatForHome();
