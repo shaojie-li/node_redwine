@@ -9,7 +9,7 @@
           </div>
         <% } else{%>
           <div class="item-wrap">
-            <img src="<%= v.listImg.url %>" alt="">
+            <img class="lazyload" data-src="<%= v.listImg.url %>" alt="">
             <p class="active-text" title="<%= v.titleFirst %>"><%= v.titleFirst %></p>
             <div class="active-title">
                 <div class="wrap">
