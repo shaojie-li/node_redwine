@@ -4,7 +4,8 @@ require.config({
         'jquery': '/m_javascripts/libs/jquery',
 		'swiper': '/m_javascripts/libs/swiper',
 		'lazyload': '/javascripts/libs/lazyload.min',
-    },
+	},
+	waitSeconds: 0,
     shim:{
         /*'swiper': ['jquery']*/
     }
