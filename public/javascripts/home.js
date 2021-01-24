@@ -2,14 +2,15 @@ require.config({
     baseUrl: './javascripts',
     paths:{
         'jquery': 'libs/jquery',
-        'swiper': 'libs/swiper'
+		'swiper': 'libs/swiper',
+		'lazyload': 'libs/jquery.lazyload'
 	},
     shim:{
         /*'swiper': ['jquery']*/
     }
 });
 
-requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
+requirejs(['jquery', 'swiper', 'common', 'lazyload'], function ($, swp, c){
 	var headerHeight = $('.g-header').outerHeight(),
 			$prodItem = $('.red-wine .prod-item'),
 			$activeItem = $('.active-wrap .item');
@@ -32,6 +33,8 @@ requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
 		var index = i + 1;
 		c.activePop('.pop-swiper-' + index);
 	}
+
+	console.log('c', c)
 
 	c.lazyload()
 
