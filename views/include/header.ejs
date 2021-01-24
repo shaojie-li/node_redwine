@@ -20,9 +20,9 @@
         <%}%>
         <link rel='stylesheet' href='/stylesheets/swiper-3.4.2.min.css' />
         <% if (isMobile) { %>
-            <script data-main="/m_javascripts/<%= pageName %>.js" src="/m_javascripts/libs/require.js"></script>
+            <script data-main="/m_javascripts/<%= pageName %>.js" defer async="true" src="/m_javascripts/libs/require.js"></script>
         <% } else{%>
-            <script data-main="/javascripts/<%= pageName %>.js" src="/javascripts/libs/require.js"></script>
+            <script data-main="/javascripts/<%= pageName %>.js" defer async="true" src="/javascripts/libs/require.js"></script>
         <%}%>
     </head>
     <body>
