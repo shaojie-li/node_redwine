@@ -4,12 +4,12 @@
       <li class="item-<%= i + 1 %> item">
         <% if (isMobile) { %>
           <div class="item-wrap">
-            <img class="lazyload" data-src="<%= v.listImg.url %>" alt="">
+            <img src="<%= v.listImg.url %>" alt="">
             <p class="active-text" title="<%= v.titleFirst %>"><%= v.titleSecond %><span class="icon-arrow"></span></p>
           </div>
         <% } else{%>
           <div class="item-wrap">
-            <img class="lazyload" data-src="<%= v.listImg.url %>" alt="">
+            <img src="<%= v.listImg.url %>" alt="">
             <p class="active-text" title="<%= v.titleFirst %>"><%= v.titleFirst %></p>
             <div class="active-title">
                 <div class="wrap">

@@ -4,7 +4,6 @@ require.config({
         'jquery': 'libs/jquery',
         'swiper': 'libs/swiper'
 	},
-	waitSeconds: 0,
     shim:{
         /*'swiper': ['jquery']*/
     }

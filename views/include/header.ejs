@@ -25,10 +25,4 @@
             <script data-main="/javascripts/<%= pageName %>.js" defer async="true" src="/javascripts/libs/require.js"></script>
         <%}%>
     </head>
-    <script data-main="/javascripts/<%= pageName %>.js" src="/javascripts/libs/lazyload.min.js"></script>
-    <script>
-        window.addEventListener("load", function(event) {
-            lazyload();
-        });
-    </script>
     <body>
