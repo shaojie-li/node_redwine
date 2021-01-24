@@ -10,10 +10,10 @@ require.config({
     }
 });
 
-requirejs(['jquery', 'swiper', 'common'], function ($, swp, c, lazyload){
+requirejs(['jquery', 'swiper', 'common', 'lazyload'], function ($, swp, c, lazyload){
 
 	window.addEventListener('load', function() {
-		lazyload()
+		lazyload({})
 	})
 
 	var headerHeight = $('.g-header').outerHeight(),

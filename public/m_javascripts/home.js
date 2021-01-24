@@ -13,7 +13,7 @@ require.config({
 requirejs(['jquery', 'swiper', 'common', 'lazyload'], function ($, swp, c, lazyload){
 
 	window.addEventListener('load', function() {
-		lazyload()
+		lazyload({})
 	})
 
 
