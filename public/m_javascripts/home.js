@@ -2,14 +2,20 @@ require.config({
     baseUrl: '/m_javascripts',
     paths:{
         'jquery': '/m_javascripts/libs/jquery',
-        'swiper': '/m_javascripts/libs/swiper'
+		'swiper': '/m_javascripts/libs/swiper',
+		'lazyload': '/javascripts/libs/lazyload.min',
     },
     shim:{
         /*'swiper': ['jquery']*/
     }
 });
 
-requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
+requirejs(['jquery', 'swiper', 'common', 'lazyload'], function ($, swp, c, lazyload){
+
+	window.addEventListener('load', function() {
+		lazyload()
+	})
+
 
 	var headerHeight = $('.g-header').outerHeight(),
 			$prodItem = $('.red-wine .prod-item'),
