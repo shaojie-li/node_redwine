@@ -33,10 +33,6 @@ requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
 		c.activePop('.pop-swiper-' + index);
 	}
 
-	console.log('c', c)
-
-	c.lazyload()
-
 	c.scrollTo('.g-nav li','.scrollItem', true, headerHeight, true);
 	
 	c.noticeToggle('.notice-popup');

@@ -355,9 +355,5 @@ define(['swiper'], function(swp) {
 				})
 			})
 		},
-		
-	lazyload: function(){
-		$("img.lazyload").lazyload({effect: "fadeIn"});
-	}
   }
 });
