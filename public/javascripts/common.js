@@ -1,5 +1,4 @@
-define(['swiper'], function(swp) {
-  return {
+var c = {
 
   	/**
   	 * [isIE 嗅探是否为IE浏览器，并获得IE版本]
@@ -445,4 +444,3 @@ define(['swiper'], function(swp) {
 		});
 	},
   }
-});
