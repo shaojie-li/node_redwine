@@ -3,7 +3,7 @@ require.config({
     paths:{
         'jquery': 'javascripts/libs/jquery',
 		'swiper': 'javascripts/libs/swiper',
-		'common': 'javascripts/libs/common',
+		'common': 'javascripts/common',
 		'jqueryLazyload': 'javascripts/libs/jquery.lazyload'
 	},
 	waitSeconds: 0,
