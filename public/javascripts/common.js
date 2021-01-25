@@ -29,7 +29,7 @@ var c = {
   	 */
   	swpFun: function(parentClass){
       var itemLenGt1 = $(parentClass).find('.swiper-slide').length > 1;
-			var newSwp = new swp(parentClass, {
+			var newSwp = new Swiper(parentClass, {
 				loop: true,
 				autoplay : itemLenGt1 ? 3000 : false,
 				calculateHeight : true,
@@ -105,7 +105,7 @@ var c = {
   			$popBox.show(0, function(){
   				var swiperClass = parentsId + ' .pop-prod-box .swiper-container',
               $swiperClass = $(swiperClass);
-  				var newSwp = new swp(swiperClass, {
+  				var newSwp = new Swiper(swiperClass, {
 							loop: true,
 							autoplay : false,
 							calculateHeight : true,
@@ -170,7 +170,7 @@ var c = {
 				$('html').addClass('overhide');
 				listBox.html(listHtml);
 				$parent.parents('.active-popup').show(0, function(){
-					var newSwp = new swp(parentClass, {
+					var newSwp = new Swiper(parentClass, {
 						loop: true,
 						autoplay : false,
 						calculateHeight : true,
@@ -336,7 +336,7 @@ var c = {
 
   			$this.find('.prod-popup').show(0, function(){
   				var swiperClass = '.pop-item-' + indexList;
-  				var newSwp = new swp(swiperClass, {
+  				var newSwp = new Swiper(swiperClass, {
 							loop: true,
 							autoplay : false,
 							calculateHeight : true,
