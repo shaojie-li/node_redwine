@@ -1,10 +1,10 @@
 require.config({
-    baseUrl: './javascripts',
+    baseUrl: './',
     paths:{
         'jquery': 'libs/jquery',
 		'swiper': 'libs/swiper',
 		'common': 'libs/common',
-		'jqueryLazyload': 'lib/jquery.lazyload'
+		'jqueryLazyload': 'libs/jquery.lazyload'
 	},
 	waitSeconds: 0,
     shim:{
