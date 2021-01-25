@@ -3,13 +3,25 @@ require.config({
     paths:{
         'jquery': 'libs/jquery',
 		'swiper': 'libs/swiper',
+		'jqueryLazyload': 'lib/jquery.lazyload'
 	},
     shim:{
-        /*'swiper': ['jquery']*/
+		jqueryLazyload: {
+			deps: ['jquery'],
+			exports: '$'
+		}
     }
 });
 
-requirejs(['jquery', 'swiper', 'common'], function ($, swp, c){
+requirejs(['jquery', 'swiper', 'common', 'jqueryLazyload'], function ($, swp, c){
+	$(document).ready(function(){
+		$("img.lazyload").lazyload({
+			effect: "fadeIn",
+			threshold: 180,
+			failure_limit: 2
+		})
+	})
+
 	var headerHeight = $('.g-header').outerHeight(),
 			$prodItem = $('.red-wine .prod-item'),
 			$activeItem = $('.active-wrap .item');
