@@ -4,7 +4,7 @@
       <li class="item-<%= i + 1 %> item">
         <% if (isMobile) { %>
           <div class="item-wrap">
-            <a href="/active/<%= v._id %>"><img class="lazyload" src="<%= v.listImg.url %>" alt=""></a>
+            <a href="/active/<%= v._id %>"><img class="lazyload" data-original="<%= v.listImg.url %>" alt=""></a>
             <p class="active-text" title="<%= v.titleFirst %>"><%= v.titleFirst %><span class="icon-arrow"></span></p>
           </div>
         <% } else{%>

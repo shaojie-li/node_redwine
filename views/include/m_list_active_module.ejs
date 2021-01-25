@@ -15,7 +15,7 @@
               <% actives.map(function(v, i){ %>
                 <li class="item">
                   <div class="item-wrap">
-                    <a href="/active/<%= v._id %>"><img class="lazyload" src="<%= v.listImg.url %>" alt="" /></a>
+                    <a href="/active/<%= v._id %>"><img class="lazyload" data-original="<%= v.listImg.url %>" alt="" /></a>
                     <p class="active-text" title="<%= v.titleSecond %>"><%= v.titleSecond %></p>
                   </div>
                   <span class="icon-arrow"></span>
