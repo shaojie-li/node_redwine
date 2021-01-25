@@ -19,6 +19,17 @@
             <link rel='stylesheet' href='/stylesheets/main.min.css' />
         <%}%>
         <link rel='stylesheet' href='/stylesheets/swiper-3.4.2.min.css' />
+        <script src="/javascripts/libs/jquery.js"></script>
+        <script src="/javascripts/libs/jquery.lazyload.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("img.lazyload").lazyload({
+                    effect: "fadeIn",
+                    threshold: 180,
+                    failure_limit: 2
+                })
+            })
+        </script>
         <% if (isMobile) { %>
             <script data-main="/m_javascripts/<%= pageName %>.js" src="/m_javascripts/libs/require.js"></script>
         <% } else{%>
