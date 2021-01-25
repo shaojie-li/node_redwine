@@ -3,8 +3,10 @@ require.config({
     paths:{
         'jquery': 'libs/jquery',
 		'swiper': 'libs/swiper',
+		'common': 'libs/common',
 		'jqueryLazyload': 'lib/jquery.lazyload'
 	},
+	waitSeconds: 0,
     shim:{
 		jqueryLazyload: {
 			deps: ['jquery'],
