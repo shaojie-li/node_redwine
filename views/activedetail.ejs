@@ -27,11 +27,11 @@
 	                <% activeDetail.detailImg.map(function(v1, i1){ %>
 	                  <% if(i1 === 0){ %>
 	                    <li class="pagation-item on">
-	                      <img src="<%= v1.url %>" alt="">
+	                      <img class="lazyload" data-original="<%= v1.url %>" alt="">
 	                    </li>
 	                  <% } else{ %>
 	                    <li class="pagation-item">
-	                      <img src="<%= v1.url %>" alt="">
+	                      <img class="lazyload" data-original="<%= v1.url %>" alt="">
 	                    </li>
 	                  <% } %>
 	                <% }) %>
