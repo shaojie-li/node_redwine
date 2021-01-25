@@ -3,6 +3,7 @@ require.config({
     paths:{
         'jquery': 'javascripts/libs/jquery',
 		'swiper': 'javascripts/libs/swiper',
+		'common': 'javascripts/common',
 	},
 	waitSeconds: 0,
     shim:{}
