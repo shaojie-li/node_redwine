@@ -4,12 +4,12 @@
       <li class="item-<%= i + 1 %> item">
         <% if (isMobile) { %>
           <div class="item-wrap">
-            <img class="lazyload" data-original="<%= v.listImg.url %>" alt="">
+            <img class="lazyload" src="<%= v.listImg.url %>" alt="">
             <p class="active-text" title="<%= v.titleFirst %>"><%= v.titleSecond %><span class="icon-arrow"></span></p>
           </div>
         <% } else{%>
           <div class="item-wrap">
-            <img class="lazyload" data-original="<%= v.listImg.url %>" alt="">
+            <img class="lazyload" src="<%= v.listImg.url %>" alt="">
             <p class="active-text" title="<%= v.titleFirst %>"><%= v.titleFirst %></p>
             <div class="active-title">
                 <div class="wrap">
@@ -43,11 +43,11 @@
                         <% v.detailImg.map(function(v1, i1){ %>
                           <% if(i1 === 0){ %>
                             <li class="pagation-item on">
-                              <img class="lazyload" data-original="<%= v1.url %>" alt="">
+                              <img class="lazyload" src="<%= v1.url %>" alt="">
                             </li>
                           <% } else{ %>
                             <li class="pagation-item">
-                              <img class="lazyload" data-original="<%= v1.url %>" alt="">
+                              <img class="lazyload" src="<%= v1.url %>" alt="">
                             </li>
                           <% } %>
                         <% }) %>
